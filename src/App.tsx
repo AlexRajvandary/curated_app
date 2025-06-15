@@ -1,5 +1,6 @@
 import "./styles.css";
 import React from "react";
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -17,11 +18,18 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
-  Divider
+  Divider,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  Avatar,
+  DropdownItem
 } from "@heroui/react";
 import type { JSX } from "react/jsx-runtime";
 import ProductCard from "./ProductCard";
 import Carousel from "./Carousel"
+import NavigationMenu from "./NavigationMenu";
+import ImageCarousel from "./ImageCarousel"
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -183,7 +191,14 @@ export default function App() {
     setBackdrop(backdrop);
     onOpen();
   };
+   const [user, setUser] = useState<null | { name: string; avatar: string }>(null);
+   const handleLogin = () => {
+    setUser({ name: "Aleks", avatar: "/avatar.jpg" });
+  };
 
+  const handleLogout = () => {
+    setUser(null);
+  };
   const menuItems = [
     "Menswear",
     "Womenswear",
@@ -265,7 +280,11 @@ export default function App() {
   },
   // другие карточки...
 ];
-
+const imageUrls = [
+  "https://images.ctfassets.net/bdvz0u6oqffk/14JslSfkm5ns5KNHTBzUrv/551583ef6795a046e688ab01b5a0349a/Best-of-Jerseys-desktop.jpg",
+  "https://images.ctfassets.net/bdvz0u6oqffk/6noZNgqPbLeLihFEt7StGR/2154838cdf55d45699364791f4b3c76b/Emerging-desktop.jpg",
+  "https://images.ctfassets.net/bdvz0u6oqffk/MK894FrtGC9Evdpi7OweG/1452248bd227e07506de000f28c70e1c/Trompe-loeil-desktop.jpg"
+]
   return (
     <div>
  <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
@@ -297,14 +316,60 @@ export default function App() {
 
     
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
+        {!user ? (
+        <>
+          <NavbarItem className="hidden lg:flex">
+            <Link href="#">Login</Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Button
+              as={Link}
+              color="primary"
+              href="#"
+              variant="flat"
+              onPress={() => handleOpen("blur")}
+            >
+              Login
+            </Button>
+            <Button
+              as={Link}
+              color="default"
+              href="#"
+              variant="flat"
+              style={{ marginLeft: "10px" }}
+            >
+              Sign Up
+            </Button>
+          </NavbarItem>
+        </>
+      ) : (
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat" onPress={() => handleOpen("blur")}>
-            Sign Up
-          </Button>
+           <Dropdown placement="bottom-end">
+        <DropdownTrigger>
+          <Avatar
+            isBordered
+            as="button"
+            className="transition-transform"
+            src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+          />
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Profile Actions" variant="flat">
+          <DropdownItem key="profile" className="h-10 gap-2">
+            <p className="font-semibold">Signed in</p>
+          </DropdownItem>
+          <DropdownItem key="view_profile" color="primary">View profile</DropdownItem>
+          <DropdownItem key="my_messages" color="primary">My messages</DropdownItem>
+          <DropdownItem key="favorites" color="primary">Favorites</DropdownItem>
+          <DropdownItem key="cart" color="primary">Cart</DropdownItem>
+          <DropdownItem key="orders" color="primary">Orders</DropdownItem>
+          <DropdownItem key="settings" color="primary">Settings</DropdownItem>
+          <DropdownItem key="logout" color="danger" className="text-danger" onPress={handleLogout}>
+            Log Out
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
         </NavbarItem>
+      )}
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
@@ -323,48 +388,26 @@ export default function App() {
         ))}
       </NavbarMenu>
     </Navbar>
-    <Navbar isBordered className="navbar-menu">
-      <NavbarContent className="gap-4 navbar-menu" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Menswear
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" href="#">
-            Womenswear
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Kids
-          </Link>
-        </NavbarItem>
-          <NavbarItem>
-          <Link color="foreground" href="#">
-            Brands
-          </Link>
-        </NavbarItem>
-          <NavbarItem>
-          <Link color="foreground" href="#">
-            Sales
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      </Navbar>
+   <NavigationMenu/>
+     <ImageCarousel images={imageUrls} />
       <div  style={{
         marginLeft: "160px",
         marginRight: "160px",
         marginTop: "20px",
+        marginBottom: "20px"}}>
+
+          <div style={{
+              fontSize: "30px",
+              marginBottom: "20px"}}>Bestsellers</div>
+              
+              <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+
+ <div style={{
+        fontSize: "30px",
+        marginTop: "20px",
         marginBottom: "20px"
-  }}>
-       
-<Carousel
-  items={products.map((p, i) => (
-    <ProductCard key={i} {...p} />
-  ))}
-  visibleSlides={5}
-/>
+  }}>Shop by price</div>
+
       </div>
  
 
@@ -397,7 +440,7 @@ export default function App() {
       type={isVisible ? "text" : "password"}
       variant="bordered"
     />
-    <Button size="lg" color="default" variant="faded">
+    <Button size="lg" color="default" variant="faded" onPress={handleLogin}>
       Log in
     </Button>
         <Divider className="my-4" />

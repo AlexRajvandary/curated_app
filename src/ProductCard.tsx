@@ -29,6 +29,7 @@ export default function ProductCard({
           className="object-cover w-full h-full"
           width={250}
           src={imageSrc}
+          isZoomed
         />
       </div>
 
