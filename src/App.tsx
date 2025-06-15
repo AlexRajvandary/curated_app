@@ -17,11 +17,11 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
-  Card,
-  Image,
   Divider
 } from "@heroui/react";
 import type { JSX } from "react/jsx-runtime";
+import ProductCard from "./ProductCard";
+import Carousel from "./Carousel"
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -192,6 +192,80 @@ export default function App() {
     "Sales"
   ];
 
+ const products = [
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+    title: "Gazelle Indoor Shoes",
+    label: "Bestseller",
+    category: "Women sneakers",
+    price: "$129.99",
+  },
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
+    title: "Samba OG",
+    label: "New",
+    category: "Men sneakers",
+    price: "$109.99",
+  },
+   {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+    title: "Gazelle Indoor Shoes",
+    label: "Bestseller",
+    category: "Women sneakers",
+    price: "$129.99",
+  },
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
+    title: "Samba OG",
+    label: "New",
+    category: "Men sneakers",
+    price: "$109.99",
+  },
+   {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+    title: "Gazelle Indoor Shoes",
+    label: "Bestseller",
+    category: "Women sneakers",
+    price: "$129.99",
+  },
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
+    title: "Samba OG",
+    label: "New",
+    category: "Men sneakers",
+    price: "$109.99",
+  },
+   {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+    title: "Gazelle Indoor Shoes",
+    label: "Bestseller",
+    category: "Women sneakers",
+    price: "$129.99",
+  },
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
+    title: "Samba OG",
+    label: "New",
+    category: "Men sneakers",
+    price: "$109.99",
+  },
+   {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+    title: "Gazelle Indoor Shoes",
+    label: "Bestseller",
+    category: "Women sneakers",
+    price: "$129.99",
+  },
+  {
+    imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
+    title: "Samba OG",
+    label: "New",
+    category: "Men sneakers",
+    price: "$109.99",
+  },
+  // другие карточки...
+];
+
   return (
     <div>
  <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
@@ -280,314 +354,17 @@ export default function App() {
       </Navbar>
       <div  style={{
         marginLeft: "160px",
-        marginRight: "160px"
+        marginRight: "160px",
+        marginTop: "20px",
+        marginBottom: "20px"
   }}>
-         <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
-    gap: "16px",
-    padding: "16px",
-    justifyContent: "start", // выравнивание влево
-  }}
->
-  <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden w-full"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-  <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-
-   <Card
-    isBlurred
-    shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-    style={{ width: "220px" }}
-  >
-    <div className="w-full h-[60%]">
-      <Image
-        alt="Product image"
-        className="object-cover w-full h-full"
-        width={250}
-        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
-      />
-    </div>
-
-    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
-      <span className="text-[10px] text-primary font-semibold uppercase">
-        Bestseller
-      </span>
-      <h2 className="text-sm font-semibold text-foreground">
-        Gazelle Indoor Shoes
-      </h2>
-      <p className="text-xs text-foreground/70">Women sneakers</p>
-      <p className="text-sm font-bold text-success">$129.99</p>
-    </div>
-  </Card>
-</div>
+       
+<Carousel
+  items={products.map((p, i) => (
+    <ProductCard key={i} {...p} />
+  ))}
+  visibleSlides={5}
+/>
       </div>
  
 
