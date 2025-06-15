@@ -278,18 +278,24 @@ export default function App() {
         </NavbarItem>
       </NavbarContent>
       </Navbar>
-  <div
+      <div  style={{
+        marginLeft: "160px",
+        marginRight: "160px"
+  }}>
+         <div
   style={{
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
     gap: "16px",
     padding: "16px",
+    justifyContent: "start", // выравнивание влево
   }}
 >
   <Card
     isBlurred
     shadow="sm"
     className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden w-full"
+    style={{ width: "220px" }}
   >
     <div className="w-full h-[60%]">
       <Image
@@ -315,7 +321,251 @@ export default function App() {
   <Card
     isBlurred
     shadow="sm"
-    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden w-full"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
+  >
+    <div className="w-full h-[60%]">
+      <Image
+        alt="Product image"
+        className="object-cover w-full h-full"
+        width={250}
+        src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1e3635543c9f4019a265793eed48d382_9366/Samba_OG_Shoes_White_JH5688_01_00_standard.jpg"
+      />
+    </div>
+
+    <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <span className="text-[10px] text-primary font-semibold uppercase">
+        Bestseller
+      </span>
+      <h2 className="text-sm font-semibold text-foreground">
+        Gazelle Indoor Shoes
+      </h2>
+      <p className="text-xs text-foreground/70">Women sneakers</p>
+      <p className="text-sm font-bold text-success">$129.99</p>
+    </div>
+  </Card>
+
+   <Card
+    isBlurred
+    shadow="sm"
+    className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
+    style={{ width: "220px" }}
   >
     <div className="w-full h-[60%]">
       <Image
@@ -338,6 +588,8 @@ export default function App() {
     </div>
   </Card>
 </div>
+      </div>
+ 
 
      
       <Modal backdrop={backdrop} isOpen={isOpen} onClose={onClose}>
