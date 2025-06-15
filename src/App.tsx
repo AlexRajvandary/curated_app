@@ -31,7 +31,7 @@ import Carousel from "./Carousel"
 import NavigationMenu from "./NavigationMenu";
 import ImageCarousel from "./ImageCarousel"
 import Footer from './Footer';
-
+import CategorySection from "./CategorySection";
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -405,8 +405,8 @@ const imageUrls = [
         fontSize: "30px",
         marginTop: "20px",
         marginBottom: "20px"
-  }}>Shop by price</div>
-
+  }}>Shop by category</div>
+      <CategorySection/>
       </div>
  
 
