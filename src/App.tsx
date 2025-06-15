@@ -30,6 +30,8 @@ import ProductCard from "./ProductCard";
 import Carousel from "./Carousel"
 import NavigationMenu from "./NavigationMenu";
 import ImageCarousel from "./ImageCarousel"
+import Footer from './Footer';
+
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -318,9 +320,6 @@ const imageUrls = [
       <NavbarContent justify="end">
         {!user ? (
         <>
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
           <NavbarItem>
             <Button
               as={Link}
@@ -411,7 +410,7 @@ const imageUrls = [
       </div>
  
 
-     
+     <Footer/>
       <Modal backdrop={backdrop} isOpen={isOpen} onClose={onClose}>
         <ModalContent>
           {() => (

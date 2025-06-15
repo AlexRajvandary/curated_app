@@ -20,7 +20,7 @@ export default function MegaMenu({ title, categories, image }: {
       <button className="px-4 py-2 hover:bg-gray-100">{title}</button>
 
       {open && (
-        <div className="fixed left-0 top-[60px] w-screen bg-white shadow-lg border-t z-50">
+        <div className="fixed left-0 top-[105px] w-screen bg-white/80 backdrop-blur-lg shadow-lg border-t z-50">
           <div className="mx-[160px] grid grid-cols-4 gap-8 py-8" style={{marginLeft:"160px", marginRight:"160px", marginBottom:"50px"}}>
             {categories.map((cat, idx) => (
               <div key={idx}>
