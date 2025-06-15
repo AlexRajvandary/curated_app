@@ -21,7 +21,7 @@ export default function MegaMenu({ title, categories, image }: {
 
       {open && (
         <div className="fixed left-0 top-[105px] w-screen bg-white/80 backdrop-blur-lg shadow-lg border-t z-50">
-          <div className="mx-[160px] grid grid-cols-4 gap-8 py-8" style={{marginLeft:"160px", marginRight:"160px", marginBottom:"50px"}}>
+          <div className="mx-[160px] mb-[50px] grid grid-cols-4 gap-8 py-8">
             {categories.map((cat, idx) => (
               <div key={idx}>
                 <h4 className="text-lg font-semibold mb-3">{cat.heading}</h4>

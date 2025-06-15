@@ -3,7 +3,7 @@ import MegaMenu from "./MegaMenu";
 export default function NavigationMenu() {
   return (
     <div style={{borderBottom: "1px solid #e5e7eb"}}>
-        <div className="flex space-x-6 px-[160px]" style={{marginLeft:"145px"}}>
+        <div className="flex space-x-6 px-[145px]">
               <MegaMenu
         title="Menswear"
         categories={[

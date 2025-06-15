@@ -295,13 +295,13 @@ const imageUrls = [
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden navbar-burger"
         />
-        <NavbarBrand>
+        <NavbarBrand className="ml-[-150px]">
           <AcmeLogo />
           <p className="font-bold text-inherit">Curated</p>
         </NavbarBrand>
           <Input
           classNames={{
-            base: "max-w-full sm:max-w-[10rem] h-10",
+            base: "max-w-full sm:max-w-[30rem] h-10",
             mainWrapper: "h-full",
             input: "text-small",
             inputWrapper:
@@ -311,7 +311,7 @@ const imageUrls = [
           size="sm"
           startContent={<SearchIcon size={18} width={undefined} height={undefined} />}
           type="search"
-          variant="bordered"
+          variant="flat"
           radius="full"
         />
       </NavbarContent>
