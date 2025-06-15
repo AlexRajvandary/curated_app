@@ -18,14 +18,28 @@ import {
   ModalFooter,
   useDisclosure,
   Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
   Image,
   Divider
 } from "@heroui/react";
+import type { JSX } from "react/jsx-runtime";
 
-export const SearchIcon = ({size = 24, strokeWidth = 1.5, width, height, ...props}) => {
+type BackdropType =  "opaque" | "transparent" | "blur";
+
+type SearchIconProps = {
+  size?: number;
+  strokeWidth?: number;
+  width?: number | string;
+  height?: number | string;
+  [key: string]: unknown;  // для остальных props (если нужны)
+};
+
+export const SearchIcon: React.FC<SearchIconProps> = ({
+  size = 24,
+  strokeWidth = 1.5,
+  width,
+  height,
+  ...props
+}) => {
   return (
     <svg
       aria-hidden="true"
@@ -54,8 +68,7 @@ export const SearchIcon = ({size = 24, strokeWidth = 1.5, width, height, ...prop
     </svg>
   );
 };
-
-export const EyeSlashFilledIcon = (props) => {
+export const EyeSlashFilledIcon = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       aria-hidden="true"
@@ -91,7 +104,7 @@ export const EyeSlashFilledIcon = (props) => {
   );
 };
 
-export const EyeFilledIcon = (props) => {
+export const EyeFilledIcon = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       aria-hidden="true"
@@ -117,8 +130,8 @@ export const EyeFilledIcon = (props) => {
 
 export const HeartIcon = ({
   size = 24,
-  width,
-  height,
+  width = 24,
+  height = 24,
   strokeWidth = 1.5,
   fill = "none",
   ...props
@@ -161,11 +174,12 @@ export const AcmeLogo = () => {
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const {isOpen, onOpen, onClose} = useDisclosure();
-  const [backdrop, setBackdrop] = React.useState("opaque");
+  const [backdrop, setBackdrop] = React.useState<BackdropType>("opaque");
   const [isVisible, setIsVisible] = React.useState(false);
-  const [liked, setLiked] = React.useState(false);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
-  const handleOpen = (backdrop) => {
+  const handleOpen = (backdrop: BackdropType) => {
     setBackdrop(backdrop);
     onOpen();
   };
@@ -200,7 +214,7 @@ export default function App() {
           }}
           placeholder="Type to search..."
           size="sm"
-          startContent={<SearchIcon size={18} />}
+          startContent={<SearchIcon size={18} width={undefined} height={undefined} />}
           type="search"
           variant="bordered"
           radius="full"
@@ -328,7 +342,7 @@ export default function App() {
      
       <Modal backdrop={backdrop} isOpen={isOpen} onClose={onClose}>
         <ModalContent>
-          {(onClose) => (
+          {() => (
             <>
               <ModalHeader className="flex flex-col gap-1">Login to your account</ModalHeader>
               <ModalBody>
