@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import About from './pages/About';
+import Catalog from './Catalog';
 
 export default function RouterWrapper() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function RouterWrapper() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
+        <Route path="/catalog" element={<Catalog/>}/>
       </Routes>
     </HeroUIProvider>
   );
