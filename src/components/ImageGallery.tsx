@@ -51,6 +51,11 @@ const ThumbnailPlugin = (
 export default function ImageGallery({ images }: Props) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
+     slides: {
+        perView: 1,
+        spacing: 200,
+        origin: 'center'
+      },
   })
 
   const [thumbnailRef] = useKeenSlider<HTMLDivElement>(
@@ -73,7 +78,7 @@ export default function ImageGallery({ images }: Props) {
             <img
               src={src}
               alt={`Product ${index + 1}`}
-              className="w-full h-[400px] object-cover rounded-lg"
+              className="w-full h-[600px] object-cover rounded-lg"
             />
           </div>
         ))}
@@ -89,7 +94,7 @@ export default function ImageGallery({ images }: Props) {
             <img
               src={src}
               alt={`Thumbnail ${index + 1}`}
-              className="w-full h-[100px] object-cover rounded-md"
+              className="w-full h-[90px] object-cover rounded-md"
             />
           </div>
         ))}

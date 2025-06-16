@@ -1,5 +1,6 @@
 // components/ProductCard.tsx
-import { Card, Image } from "@heroui/react";;
+import { Card, Image} from "@heroui/react";;
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   imageSrc: string;
@@ -7,6 +8,7 @@ interface ProductCardProps {
   label: string;
   category: string;
   price: string;
+  href: string;
 }
 
 export default function ProductCard({
@@ -15,13 +17,17 @@ export default function ProductCard({
   label,
   category,
   price,
+  href
 }: ProductCardProps) {
+   const navigate = useNavigate();
   return (
     <Card
+      isPressable
       isBlurred
       shadow="sm"
       className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
       style={{ width: "220px" }}
+      onPress={() => navigate(href)}
     >
       <div className="w-full h-[60%]">
         <Image

@@ -18,6 +18,7 @@ const images = [
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -25,6 +26,7 @@ const images = [
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -32,6 +34,7 @@ const images = [
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -39,6 +42,7 @@ const images = [
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -46,6 +50,7 @@ const images = [
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -53,6 +58,7 @@ const images = [
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -60,6 +66,7 @@ const images = [
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -67,6 +74,7 @@ const images = [
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -74,6 +82,7 @@ const images = [
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -81,6 +90,7 @@ const images = [
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
   // другие карточки...
 ];
@@ -92,12 +102,12 @@ export default function Product() {
          <div className="px-[140px]">
          <div className="flex py-8 gap-12">
       {/* Галерея фото — слева */}
-      <div className="w-1/2">
+      <div className="w-2/3 ml-8">
            <ImageGallery images={images} />
       </div>
 
       {/* Информация о товаре — справа */}
-      <div className="w-1/2 flex flex-col justify-start">
+      <div className="w-1/3 flex flex-col justify-start">
         <h1 className="text-3xl font-bold mb-4">Название товара</h1>
         <p className="text-lg text-gray-600 mb-2">Категория: Women sneakers</p>
         <p className="text-2xl text-success font-semibold mb-6">$129.99</p>

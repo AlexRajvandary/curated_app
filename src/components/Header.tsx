@@ -27,6 +27,7 @@ import type { JSX } from "react/jsx-runtime";
 import "../styles.css";
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -166,6 +167,7 @@ export default function Header(){
   const handleLogout = () => {
     setUser(null);
   };
+    const navigate = useNavigate();
   const menuItems = [
     "Menswear",
     "Womenswear",
@@ -240,7 +242,7 @@ export default function Header(){
           <DropdownItem key="profile" className="h-10 gap-2">
             <p className="font-semibold">Signed in</p>
           </DropdownItem>
-          <DropdownItem key="view_profile" color="primary">View profile</DropdownItem>
+          <DropdownItem key="view_profile" color="primary" onPress={()=>navigate("/user")}>View profile</DropdownItem>
           <DropdownItem key="my_messages" color="primary">My messages</DropdownItem>
           <DropdownItem key="favorites" color="primary">Favorites</DropdownItem>
           <DropdownItem key="cart" color="primary">Cart</DropdownItem>

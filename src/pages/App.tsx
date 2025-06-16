@@ -163,6 +163,7 @@ export default function App() {
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -170,6 +171,7 @@ export default function App() {
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -177,6 +179,7 @@ export default function App() {
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -184,6 +187,7 @@ export default function App() {
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -191,6 +195,7 @@ export default function App() {
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -198,6 +203,7 @@ export default function App() {
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -205,6 +211,7 @@ export default function App() {
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -212,6 +219,7 @@ export default function App() {
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
    {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -219,6 +227,7 @@ export default function App() {
     label: "Bestseller",
     category: "Women sneakers",
     price: "$129.99",
+    href: "/product"
   },
   {
     imageSrc: "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg.",
@@ -226,6 +235,7 @@ export default function App() {
     label: "New",
     category: "Men sneakers",
     price: "$109.99",
+    href: "/product"
   },
   // другие карточки...
 ];
@@ -248,7 +258,7 @@ const imageUrls = [
               fontSize: "30px",
               marginBottom: "20px"}}>Bestsellers</div>
               
-              <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+              <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} href={p.href}/>))} visibleSlides={5}/>
 
  <div style={{
         fontSize: "30px",
