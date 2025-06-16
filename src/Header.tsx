@@ -201,7 +201,7 @@ export default function Header(){
           radius="full"
         />
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent className="mr-[-100px]" justify="end">
         {!user ? (
         <>
           <NavbarItem>

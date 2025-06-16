@@ -21,7 +21,7 @@ export default function Catalog() {
     <>
     <Header/>
     <CatalogHeader/>
-        <div className="flex px-[140px] gap-8">
+        <div className="flex px-[160px] gap-8">
             <CatalogFilters/>
             <div className="flex-1">
               <ProductGrid products={products}/>
