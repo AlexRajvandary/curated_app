@@ -7,9 +7,10 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import App from './App';
+import App from './pages/App';
 import About from './pages/About';
-import Catalog from './Catalog';
+import Catalog from './pages/Catalog';
+import Product from './pages/Product';
 
 export default function RouterWrapper() {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ export default function RouterWrapper() {
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/catalog" element={<Catalog/>}/>
+        <Route path="/product" element={<Product/>}/>
       </Routes>
     </HeroUIProvider>
   );

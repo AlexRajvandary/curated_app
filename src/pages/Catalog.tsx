@@ -1,8 +1,8 @@
-import Footer from "./Footer";
-import Header from "./Header";
-import CatalogHeader from "./CatalogHeader";
-import CatalogFilters from "./CatalogFilters";
-import ProductGrid from "./ProductGrid";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import CatalogHeader from "../components/CatalogHeader";
+import CatalogFilters from "../components/CatalogFilters";
+import ProductGrid from "../components/ProductGrid";
 import {Pagination} from "@heroui/react";
 
 

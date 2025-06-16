@@ -1,12 +1,12 @@
-import "./styles.css";
+import "../styles.css";
 import React from "react";
 import type { JSX } from "react/jsx-runtime";
-import ProductCard from "./ProductCard";
-import Carousel from "./Carousel"
-import Header from "./Header";
-import ImageCarousel from "./ImageCarousel"
-import Footer from './Footer';
-import CategorySection from "./CategorySection";
+import ProductCard from "../components/ProductCard";
+import Carousel from "../components/Carousel"
+import Header from "../components/Header";
+import ImageCarousel from "../components/ImageCarousel"
+import Footer from '../components/Footer';
+import CategorySection from "../components/CategorySection";
 
 type SearchIconProps = {
   size?: number;

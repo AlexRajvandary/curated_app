@@ -24,7 +24,7 @@ import {
 } from "@heroui/react";
 import NavigationMenu from "./NavigationMenu";
 import type { JSX } from "react/jsx-runtime";
-import "./styles.css";
+import "../styles.css";
 import React from "react";
 import { useState } from "react";
 
