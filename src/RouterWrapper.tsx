@@ -12,6 +12,7 @@ import About from './pages/About';
 import Catalog from './pages/Catalog';
 import Product from './pages/ProductPage';
 import UserPage from "./pages/UserPage";
+import ListNewProduct from "./pages/ListNewProduct";
 
 export default function RouterWrapper() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function RouterWrapper() {
         <Route path="/catalog" element={<Catalog/>}/>
         <Route path="/product" element={<Product/>}/>
         <Route path="/user" element={<UserPage/>}/>
+        <Route path="/listNewProduct" element={<ListNewProduct/>}/>
       </Routes>
     </HeroUIProvider>
   );
