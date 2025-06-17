@@ -228,32 +228,61 @@ export default function Header(){
           </NavbarItem>
         </>
       ) : (
-        <NavbarItem>
-           <Dropdown placement="bottom-end">
-        <DropdownTrigger>
-          <Avatar
-            isBordered
-            as="button"
-            className="transition-transform"
-            src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-          />
-        </DropdownTrigger>
-        <DropdownMenu aria-label="Profile Actions" variant="flat">
-          <DropdownItem key="profile" className="h-10 gap-2">
-            <p className="font-semibold">Signed in</p>
-          </DropdownItem>
-          <DropdownItem key="view_profile" color="primary" onPress={()=>navigate("/user")}>View profile</DropdownItem>
-          <DropdownItem key="my_messages" color="primary">My messages</DropdownItem>
-          <DropdownItem key="favorites" color="primary">Favorites</DropdownItem>
-          <DropdownItem key="cart" color="primary">Cart</DropdownItem>
-          <DropdownItem key="orders" color="primary">Orders</DropdownItem>
-          <DropdownItem key="settings" color="primary">Settings</DropdownItem>
-          <DropdownItem key="logout" color="danger" className="text-danger" onPress={handleLogout}>
-            Log Out
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-        </NavbarItem>
+       <NavbarItem>
+  <div className="flex items-center gap-4">
+    <Button
+      as={Link}
+      color="default"
+      href="/listNewProduct"
+      variant="flat"
+    >
+      Sell
+    </Button>
+
+    <Dropdown placement="bottom-end">
+      <DropdownTrigger>
+        <Avatar
+          isBordered
+          as="button"
+          className="transition-transform"
+          src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+        />
+      </DropdownTrigger>
+      <DropdownMenu aria-label="Profile Actions" variant="flat">
+        <DropdownItem key="profile" className="h-10 gap-2">
+          <p className="font-semibold">Signed in</p>
+        </DropdownItem>
+        <DropdownItem key="view_profile" color="primary" onPress={() => navigate("/user")}>
+          View profile
+        </DropdownItem>
+        <DropdownItem key="my_messages" color="primary">
+          My messages
+        </DropdownItem>
+        <DropdownItem key="favorites" color="primary">
+          Favorites
+        </DropdownItem>
+        <DropdownItem key="cart" color="primary">
+          Cart
+        </DropdownItem>
+        <DropdownItem key="orders" color="primary">
+          Orders
+        </DropdownItem>
+        <DropdownItem key="settings" color="primary">
+          Settings
+        </DropdownItem>
+        <DropdownItem
+          key="logout"
+          color="danger"
+          className="text-danger"
+          onPress={handleLogout}
+        >
+          Log Out
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+  </div>
+</NavbarItem>
+
       )}
       </NavbarContent>
       <NavbarMenu>
