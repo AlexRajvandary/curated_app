@@ -146,10 +146,10 @@ export default function ListNewProduct() {
           
           <div className="w-1/2">
   <div className="flex gap-2 items-end">
-    <div className="w-[70%]">
+    <div className="w-[65%]">
       <Input label="Price" type="number" />
     </div>
-    <div className="w-[30%]">
+    <div className="w-[35%]">
       <CurrencyWithFlags />
     </div>
   </div>
@@ -159,10 +159,19 @@ export default function ListNewProduct() {
             <Input label="Shipping from" type="string" />
           </div>
           
-
+        <div className="w-1/2">
+            <Autocomplete
+              className="w-full"
+              defaultItems={sizes}
+              placeholder="Tags"
+              description="Add tags to make your item more searchable"
+            >
+              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+            </Autocomplete>
+        </div>
           {/* Описание */}
-          <div>
-            <Textarea label="Description" placeholder="Enter your description" />
+          <div className="w-2/3">
+            <Textarea label="Description" placeholder="Add details about condition, how the garment fits, additional measurements, shipping policies, retail price, link to retail page, etc." />
           </div>
 
           {/* Картинка */}

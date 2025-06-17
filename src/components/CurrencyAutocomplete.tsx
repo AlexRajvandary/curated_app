@@ -2,7 +2,9 @@ import { Autocomplete, AutocompleteItem, Avatar } from "@heroui/react";
 
 export default function CurrencyWithFlags() {
   return (
-    <Autocomplete className="max-w-xs" label="Select currency">
+    <Autocomplete className="max-w-xs" label="Select currency"  scrollShadowProps={{
+        isEnabled: false,
+      }}>
       <AutocompleteItem key="usd" startContent={<Avatar alt="USA" className="w-6 h-6" src="https://flagcdn.com/us.svg" />}>
         USD – ($)
       </AutocompleteItem>
