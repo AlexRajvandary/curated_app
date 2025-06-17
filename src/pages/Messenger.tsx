@@ -23,14 +23,20 @@ export default function Messenger() {
           <div className="w-[30%] bg-white p-4 min-h-[calc(100vh-160px)] border-r">
             <div className="font-medium text-lg pb-[15px]">Chats</div>
             <SearchInput/>
-            <Tabs aria-label="Options" className='py-[15px]'>
-        <Tab key="Sellers" title="Sellers">
-          
-        </Tab>
-        <Tab key="Buyers" title="Buyers">
-          
-        </Tab>
-      </Tabs>
+          <div className="flex flex-col items-center py-[15px] w-full">
+  <Tabs aria-label="Options" className="w-full justify-center">
+    <Tab key="Sellers" title="Sellers" className="w-full">
+      <div className="flex items-center bg-white rounded w-full">
+        <Avatar className="h-10 w-10 p-4" />
+        <div className="flex flex-col p-4">
+          <p className="text-md font-semibold">HeroUI</p>
+          <p className="text-sm text-gray-500">heroui.com</p>
+        </div>
+      </div>
+    </Tab>
+    <Tab key="Buyers" title="Buyers"></Tab>
+  </Tabs>
+</div>
           </div>
 
           {/* Правая колонка — 70% */}
