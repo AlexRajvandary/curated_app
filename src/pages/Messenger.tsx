@@ -1,8 +1,10 @@
-import {Avatar, Tab, Tabs} from '@heroui/react';
+import {Avatar, Tab, Tabs, Textarea} from '@heroui/react';
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
-
 import Messages from "../components/Messages";
+import AttachmentDropdown from '../components/AttachmentDropDown';
+import DialogItem from '../components/DialogItem';
+import '../App.css';
 
 const sampleMessages = [
   { id: "1", text: "Привет!", sender: "other" },
@@ -26,15 +28,34 @@ export default function Messenger() {
           <div className="flex flex-col items-center py-[15px] w-full">
   <Tabs aria-label="Options" className="w-full justify-center">
     <Tab key="Sellers" title="Sellers" className="w-full">
-      <div className="flex items-center bg-white rounded w-full">
-        <Avatar className="h-10 w-10 p-4" />
-        <div className="flex flex-col p-4">
-          <p className="text-md font-semibold">HeroUI</p>
-          <p className="text-sm text-gray-500">heroui.com</p>
+     <div className="max-h-[450px] overflow-y-auto space-y-2 pr-2 hide-scrollbar">
+          {/* Много элементов для демонстрации прокрутки */}
+          <DialogItem name="Alice" subtitle="Hello!" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Bob" subtitle="New order" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Charlie" subtitle="Payment sent" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Diana" subtitle="Shipping today" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Eva" subtitle="Got it!" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Frank" subtitle="Review needed" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="George" subtitle="See you soon" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Hannah" subtitle="Let's talk" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Igor" subtitle="✅ Done" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
         </div>
-      </div>
+      
     </Tab>
-    <Tab key="Buyers" title="Buyers"></Tab>
+    <Tab key="Buyers" title="Buyers" className="w-full">
+       <div className="max-h-[450px] overflow-y-auto space-y-2 pr-2 hide-scrollbar">
+          {/* Много элементов для демонстрации прокрутки */}
+          <DialogItem name="Eva" subtitle="Got it!" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Frank" subtitle="Review needed" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="George" subtitle="See you soon" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Hannah" subtitle="Let's talk" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Igor" subtitle="✅ Done" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Alice" subtitle="Hello!" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d'  />
+          <DialogItem name="Bob" subtitle="New order" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Charlie" subtitle="Payment sent" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+          <DialogItem name="Diana" subtitle="Shipping today" avatarSrc='https://i.pravatar.cc/150?u=a042581f4e29026024d' />
+        </div>
+    </Tab>
   </Tabs>
 </div>
           </div>
@@ -54,22 +75,13 @@ export default function Messenger() {
   <div className="flex-1 overflow-y-auto px-6 pb-[100px] pt-4 hide-scrollbar">
     <Messages messages={sampleMessages} />
   </div>
-  <div className="sticky bottom-0 px-4 pb-4">
+  <div className="sticky bottom-0 px-2 pb-1">
   <form
-  className="flex gap-2 bg-white rounded-full px-4 py-2 w-full mx-auto"
+  className="flex bg-white rounded-full w-full mx-auto hide-scrollbar"
   style={{ boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.08), 0px 4px 16px rgba(0, 0, 0, 0.08)' }}
 >
-    <input
-      type="text"
-      placeholder="Type your message..."
-      className="flex-1 pl-4 rounded-full"
-    />
-    <button
-      type="submit"
-      className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-    >
-      Send
-    </button>
+  <AttachmentDropdown/>
+    <Textarea placeholder="Type your message..." minRows={1} maxRows={3} className="flex-1 px-4 rounded-full"/>
   </form>
 </div>
 
