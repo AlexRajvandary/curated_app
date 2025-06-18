@@ -204,13 +204,13 @@ export default function Header(){
         <DropdownItem key="favorites" color="primary" href="/favorites">
           Favorites
         </DropdownItem>
-        <DropdownItem key="cart" color="primary">
-          Cart
+        <DropdownItem key="cart" color="primary" href="/drafts">
+          Drafts
         </DropdownItem>
-        <DropdownItem key="orders" color="primary">
+        <DropdownItem key="orders" color="primary" href="/orders">
           Orders
         </DropdownItem>
-        <DropdownItem key="settings" color="primary">
+        <DropdownItem key="settings" color="primary" href="/settings">
           Settings
         </DropdownItem>
         <DropdownItem

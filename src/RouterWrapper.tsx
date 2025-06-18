@@ -15,6 +15,8 @@ import UserPage from "./pages/UserPage";
 import ListNewProduct from "./pages/ListNewProduct";
 import Messenger from "./pages/Messenger";
 import Favorites from "./pages/favorites";
+import Orders from "./pages/Orders";
+import Drafts from "./pages/Drafts";
 
 export default function RouterWrapper() {
   const navigate = useNavigate();
@@ -31,6 +33,8 @@ export default function RouterWrapper() {
         <Route path="/listNewProduct" element={<ListNewProduct/>}/>
         <Route path="/messenger" element = {<Messenger/>}/>
         <Route path="/favorites" element = {<Favorites/>}/>
+         <Route path="/orders" element = {<Orders/>}/>
+           <Route path="/drafts" element = {<Drafts/>}/>
       </Routes>
     </HeroUIProvider>
   );
