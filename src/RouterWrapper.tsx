@@ -14,7 +14,7 @@ import Product from './pages/ProductPage';
 import UserPage from "./pages/UserPage";
 import ListNewProduct from "./pages/ListNewProduct";
 import Messenger from "./pages/Messenger";
-import Favorites from "./pages/favorites";
+import Favorites from "./pages/Favorites";
 import Orders from "./pages/Orders";
 import Drafts from "./pages/Drafts";
 

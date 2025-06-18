@@ -633,7 +633,6 @@ export default function App() {
   return (
     <Table
       isCompact
-    
       aria-label="Example table with custom cells, pagination and sorting"
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
