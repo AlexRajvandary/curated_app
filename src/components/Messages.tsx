@@ -4,7 +4,7 @@ import '../App.css';
 type Message = {
   id: string;
   text: string;
-  sender: "me" | "other";
+  sender: string;
 };
 
 type MessagesProps = {
