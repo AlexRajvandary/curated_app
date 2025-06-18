@@ -8,6 +8,11 @@ type SearchIconProps = {
   [key: string]: unknown;  // для остальных props (если нужны)
 };
 
+type SearchInputProps = {
+  placeholder?: string;
+};
+
+
 export const SearchIcon: React.FC<SearchIconProps> = ({
   size = 24,
   strokeWidth = 1.5,
@@ -44,7 +49,7 @@ export const SearchIcon: React.FC<SearchIconProps> = ({
   );
 };
 
-export default function SearchInput(){
+export default function SearchInput({ placeholder = "Type to search..." }: SearchInputProps){
     return(<>
       <Input
           classNames={{
@@ -54,7 +59,7 @@ export default function SearchInput(){
             inputWrapper:
               "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
           }}
-          placeholder="Type to search..."
+          placeholder={placeholder}
           size="sm"
           startContent={<SearchIcon size={18} width={undefined} height={undefined} />}
           type="search"
