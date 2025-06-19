@@ -27,7 +27,7 @@ export default function Messages({ messages }: MessagesProps) {
               "px-4 py-2 rounded-lg max-w-xs text-sm",
               {
                 "bg-blue-500 text-white": msg.sender === "me",
-                "bg-white text-gray-800": msg.sender === "other",
+                "bg-white text-gray-800 shadow-md": msg.sender === "other",
               }
             )}
           >

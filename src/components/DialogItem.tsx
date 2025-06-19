@@ -1,21 +1,41 @@
 import React from "react";
 import { Avatar } from "@heroui/react";
 
-interface DialogItemProps {
-  avatarSrc?: string;
+type DialogItemProps = {
   name: string;
-  subtitle?: string;
-}
+  lastMessage: string;
+  avatarSrc: string;
+  isSelected?: boolean;
+  onClick?: () => void;
+};
 
-const DialogItem: React.FC<DialogItemProps> = ({ avatarSrc, name, subtitle }) => {
+const DialogItem: React.FC<DialogItemProps> = ({ avatarSrc,
+                                                 name,
+                                                 lastMessage,  
+                                                 isSelected = false,
+                                                 onClick }) => {
   return (
-    <div className="flex items-center bg-white rounded w-full">
-      <Avatar className="h-10 w-10" src={avatarSrc} />
-      <div className="flex flex-col pl-4 pb-2">
-        <p className="text-md font-semibold">{name}</p>
-        {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
-      </div>
-    </div>
+   <div
+  onClick={onClick}
+  className={`
+    flex items-center rounded-[10px] w-full cursor-pointer transition-colors 
+    ${isSelected ? "bg-blue-500" : "bg-white"}
+    hover:bg-gray-200
+  `}
+>
+  <Avatar className="h-11 w-11 m-[5px]" src={avatarSrc} />
+  <div className="flex flex-col pl-4 pb-2">
+    <p className={`text-md font-semibold transition-colors ${isSelected ? "text-white" : "text-black"} hover:text-white`}>
+      {name}
+    </p>
+    {lastMessage && (
+      <p className={`text-sm transition-colors ${isSelected ? "text-white" : "text-gray-500"} group-hover:text-white`}>
+        {lastMessage}
+      </p>
+    )}
+  </div>
+</div>
+
   );
 };
 
