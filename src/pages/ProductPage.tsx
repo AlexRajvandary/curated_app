@@ -149,10 +149,25 @@ export default function Product() {
                  marginBottom: "20px"}}>You may also like:</div>
                  
                  <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+                  <div style={{
+                 fontSize: "30px",
+                 marginBottom: "20px"}}>Also in this category:</div>
+                 
+                 <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+    <div style={{
+                 fontSize: "30px",
+                 marginBottom: "20px"}}>Also from this Seller:</div>
+                 
+                 <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
 
      <div style={{
                  fontSize: "30px",
-                 marginBottom: "20px"}}>Bestsellers</div>
+                 marginBottom: "20px"}}>Also from this Brand:</div>
+                 
+                 <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+      <div style={{
+                 fontSize: "30px",
+                 marginBottom: "20px"}}>Bestsellers:</div>
                  
                  <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
     </div>
