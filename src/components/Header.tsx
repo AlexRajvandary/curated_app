@@ -147,7 +147,7 @@ export default function Header(){
         <a href="/">
 <NavbarBrand className="ml-[-150px]">
           <AcmeLogo/>
-          <p className="font-bold text-inherit">Curated</p>
+          <p className="font-bold text-[21px]">Curated</p>
         </NavbarBrand>
         </a>
         
