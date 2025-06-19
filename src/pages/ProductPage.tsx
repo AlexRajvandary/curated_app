@@ -3,6 +3,9 @@ import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import ImageGallery from "../components/ImageGallery";
 import Carousel from "../components/Carousel";
+import { Button } from "@heroui/react";
+import { HeartIcon } from "../components/HeartIcon";
+import { BookmarkIcon } from "../components/SavedIcon";
 
 const images = [
   "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
@@ -109,16 +112,32 @@ export default function Product() {
       {/* Информация о товаре — справа */}
       <div className="w-1/3 flex flex-col justify-start">
         <h1 className="text-3xl font-bold mb-4">Название товара</h1>
-        <p className="text-lg text-gray-600 mb-2">Категория: Women sneakers</p>
-        <p className="text-2xl text-success font-semibold mb-6">$129.99</p>
-        <p className="text-base text-gray-700 mb-4">
+        <p className="text-lg mb-2">Категория: Women sneakers</p>
+         <p className="text-lg mb-2">Brand</p>
+        <p className="text-lg mb-2">Size</p>
+        <p className="text-lg mb-2">Color</p>
+        <p className="text-lg mb-2">Condition</p>
+        <p className="text-base mb-4">
           Описание товара. Здесь можно рассказать об особенностях, материалах,
           преимуществах и т.д.
         </p>
-
-        <button className="bg-success text-white py-2 px-6 rounded-lg hover:bg-success/80 transition">
-          Добавить в корзину
-        </button>
+        <div className="flex items-center justify-between w-full mb-6">
+           <div className="flex items-center gap-2">
+          <Button isIconOnly aria-label="Like" variant="bordered">
+              <HeartIcon fill="#F71735" stroke="#F71735"/>
+          </Button>
+          <Button isIconOnly aria-label="Like" variant="bordered">
+            <BookmarkIcon fill="black"/>
+          </Button>
+          
+        </div>
+        <p className="text-2xl text-black font-bold text-end">$129.99</p>
+        </div>
+       
+       
+        <Button color="success" size="lg"  className="bg-gradient-to-tr my-2 from-pink-500 to-yellow-500 text-white shadow-lg rounded-lg">Purchase</Button>
+        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Offer</Button>
+        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Message</Button>
       </div>
     </div>
     <div style={{
