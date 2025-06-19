@@ -72,13 +72,13 @@ export default function ImageGallery({ images }: Props) {
   return (
     <div className="flex flex-col gap-4">
       {/* Main gallery */}
-      <div ref={sliderRef} className="keen-slider rounded-lg overflow-hidden">
+      <div ref={sliderRef} className="keen-slider overflow-hidden">
         {images.map((src, index) => (
           <div key={index} className="keen-slider__slide">
             <img
               src={src}
               alt={`Product ${index + 1}`}
-              className="w-full h-[600px] object-cover rounded-lg"
+              className="w-full h-[600px] object-cover"
             />
           </div>
         ))}
@@ -89,12 +89,12 @@ export default function ImageGallery({ images }: Props) {
         {images.map((src, index) => (
           <div
             key={index}
-            className="keen-slider__slide cursor-pointer transition border-2 border-transparent [&.active]:border-success rounded-md"
+            className="keen-slider__slide cursor-pointer transition border-2 border-transparent [&.active]:border-success"
           >
             <img
               src={src}
               alt={`Thumbnail ${index + 1}`}
-              className="w-full h-[90px] object-cover rounded-md"
+              className="w-full h-[90px] object-cover"
             />
           </div>
         ))}

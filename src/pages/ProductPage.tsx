@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import ImageGallery from "../components/ImageGallery";
 import Carousel from "../components/Carousel";
-import { Button } from "@heroui/react";
+import { Avatar, Button, Card } from "@heroui/react";
 import { HeartIcon } from "../components/HeartIcon";
 import { BookmarkIcon } from "../components/SavedIcon";
 
@@ -138,9 +138,19 @@ export default function Product() {
         <Button color="success" size="lg"  className="bg-gradient-to-tr my-2 from-pink-500 to-yellow-500 text-white shadow-lg rounded-lg">Purchase</Button>
         <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Offer</Button>
         <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Message</Button>
+        <Card>
+          <Avatar/>
+        </Card>
       </div>
     </div>
+    
     <div style={{
+                 fontSize: "30px",
+                 marginBottom: "20px"}}>You may also like:</div>
+                 
+                 <Carousel items={products.map((p, i) => (<ProductCard key={i} {...p} />))} visibleSlides={5}/>
+
+     <div style={{
                  fontSize: "30px",
                  marginBottom: "20px"}}>Bestsellers</div>
                  

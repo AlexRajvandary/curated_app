@@ -232,7 +232,6 @@ export default function Header(){
     </Dropdown>
      <Button
       as={Link}
-      color="default"
       href="/listNewProduct"
       variant="flat"
     >

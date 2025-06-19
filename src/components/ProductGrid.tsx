@@ -26,6 +26,7 @@ export default function ProductGrid({ products }: Props) {
       >
         {products.map((product) => (
           <Card
+            radius="none"
             key={product.id}
             isBlurred
             shadow="sm"
@@ -34,6 +35,7 @@ export default function ProductGrid({ products }: Props) {
           >
             <div className="w-full">
               <Image
+              radius="none"
                 alt="Product image"
                 className="object-cover w-full h-full"
                 width={250}

@@ -1,6 +1,7 @@
 // components/ProductCard.tsx
 import { Card, Image} from "@heroui/react";;
 import { useNavigate } from "react-router-dom";
+import { HeartIcon } from "./HeartIcon";
 
 interface ProductCardProps {
   imageSrc: string;
@@ -22,6 +23,7 @@ export default function ProductCard({
    const navigate = useNavigate();
   return (
     <Card
+    radius="none"
       isPressable
       isBlurred
       shadow="sm"
@@ -31,6 +33,7 @@ export default function ProductCard({
     >
       <div className="w-full h-[60%]">
         <Image
+        radius="none"
           alt="Product image"
           className="object-cover w-full h-full"
           width={250}
@@ -39,13 +42,16 @@ export default function ProductCard({
         />
       </div>
 
-      <div className="p-3 flex flex-col justify-between h-[40%] w-full">
+      <div className="p-3 flex flex-col justify-between h-[40%] w-full text-left">
         <span className="text-[10px] text-primary font-semibold uppercase">
           {label}
         </span>
         <h2 className="text-sm font-semibold text-foreground">{title}</h2>
         <p className="text-xs text-foreground/70">{category}</p>
-        <p className="text-sm font-bold text-success">{price}</p>
+       <div className="flex items-center justify-between pt-[10px]">
+  <p className="text-md font-bold">{price}</p>
+  <HeartIcon fill="white" strokeColor="black" size={22}/>
+</div>
       </div>
     </Card>
   );
