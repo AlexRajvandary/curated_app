@@ -28,6 +28,10 @@ import "../styles.css";
 import React from "react";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
+import { MailIcon } from "./MailIcon";
+import { HeartIcon } from "./HeartIcon";
+import { NotificationIcon } from "./NotificationIcon";
+import { CartIcon } from "./CartIcon";
 
 type BackdropType =  "opaque" | "transparent" | "blur";
 
@@ -140,10 +144,13 @@ export default function Header(){
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden navbar-burger"
         />
-        <NavbarBrand className="ml-[-150px]">
-          <AcmeLogo />
+        <a href="/">
+<NavbarBrand className="ml-[-150px]">
+          <AcmeLogo/>
           <p className="font-bold text-inherit">Curated</p>
         </NavbarBrand>
+        </a>
+        
        <SearchInput/>
       </NavbarContent>
       <NavbarContent className="mr-[-100px]" justify="end">
@@ -173,18 +180,18 @@ export default function Header(){
       ) : (
        <NavbarItem>
   <div className="flex items-center gap-4">
-    <Button
-      as={Link}
-      color="default"
-      href="/listNewProduct"
-      variant="flat"
-    >
-      Sell
-    </Button>
+   <div className="flex items-center gap-4 mr-[20px]">
+    <a href="/messenger"><MailIcon/></a>
+    <a href="/favorites"><HeartIcon/></a>
+    <a href=""><NotificationIcon/></a>
+    <a href="/orders"><CartIcon/></a>
+   </div>
+   
 
     <Dropdown placement="bottom-end">
       <DropdownTrigger>
         <Avatar
+          size="sm"
           isBordered
           as="button"
           className="transition-transform"
@@ -223,7 +230,16 @@ export default function Header(){
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
+     <Button
+      as={Link}
+      color="default"
+      href="/listNewProduct"
+      variant="flat"
+    >
+      Sell
+    </Button>
   </div>
+  
 </NavbarItem>
 
       )}
