@@ -19,6 +19,8 @@ import {
   User,
   Pagination,
 } from "@heroui/react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
@@ -360,7 +362,6 @@ type User = (typeof users)[0];
 
 export default function App() {
   const [filterValue, setFilterValue] = React.useState("");
-  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set([]));
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS),
   );
@@ -504,6 +505,7 @@ export default function App() {
             variant="bordered"
             onClear={() => setFilterValue("")}
             onValueChange={onSearchChange}
+            radius="none"
           />
           <div className="flex gap-3">
             <Dropdown>
@@ -512,6 +514,7 @@ export default function App() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
                   variant="flat"
+                  radius="none"
                 >
                   Status
                 </Button>
@@ -537,6 +540,7 @@ export default function App() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
                   variant="flat"
+                  radius="none"
                 >
                   Columns
                 </Button>
@@ -556,7 +560,7 @@ export default function App() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button className="bg-foreground text-background" endContent={<PlusIcon />} size="sm">
+            <Button className="bg-foreground text-background" endContent={<PlusIcon />} size="sm" radius="none">
               Add New
             </Button>
           </div>
@@ -602,18 +606,13 @@ export default function App() {
           variant="light"
           onChange={setPage}
         />
-        <span className="text-small text-default-400">
-          {selectedKeys === "all"
-            ? "All items selected"
-            : `${selectedKeys.size} of ${items.length} selected`}
-        </span>
       </div>
     );
-  }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+  }, [items.length, page, pages, hasSearchFilter]);
 
   const classNames = React.useMemo(
     () => ({
-      wrapper: ["max-h-[382px]", "max-w-3xl"],
+      wrapper: ["max-h-[382px]", "max-w-3xl", "rounded-none"],
       th: ["bg-transparent", "text-default-500", "border-b", "border-divider"],
       td: [
         // changing the rows border radius
@@ -631,6 +630,13 @@ export default function App() {
   );
 
   return (
+    <>
+    <Header/>
+    <div className="flex justify-center mb-[20px]">
+  <div className="w-full max-w-[770px]">
+    <div className="text-[23px] font-semibold my-[20px]">
+      My Orders
+    </div>
     <Table
       isCompact
       aria-label="Example table with custom cells, pagination and sorting"
@@ -642,12 +648,9 @@ export default function App() {
         },
       }}
       classNames={classNames}
-      selectedKeys={selectedKeys}
-      selectionMode="multiple"
       sortDescriptor={sortDescriptor}
       topContent={topContent}
       topContentPlacement="outside"
-      onSelectionChange={setSelectedKeys}
       onSortChange={setSortDescriptor}
     >
       <TableHeader columns={headerColumns}>
@@ -661,7 +664,7 @@ export default function App() {
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={"No users found"} items={sortedItems}>
+      <TableBody emptyContent={"You have no orders yet."} items={sortedItems}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
@@ -669,5 +672,9 @@ export default function App() {
         )}
       </TableBody>
     </Table>
+     </div>
+     </div>
+    <Footer/>
+    </>
   );
 }
