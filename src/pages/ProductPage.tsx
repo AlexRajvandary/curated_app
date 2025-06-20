@@ -8,9 +8,9 @@ import { HeartIcon } from "../components/HeartIcon";
 import { BookmarkIcon } from "../components/SavedIcon";
 
 const images = [
-  "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
-  "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
-  "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
+  "https://media-assets.grailed.com/prd/listing/temp/6715321cb166457bb7558949ae988a96?w=800",
+  "https://media-assets.grailed.com/prd/listing/73652406/0e928061dfdc42f2b206c6cf2196e949?w=800",
+  "https://media-assets.grailed.com/prd/listing/73652406/c41b9a29de1a45de9314a6ac6ddbcba1?w=800",
   "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
 ]
 
@@ -111,15 +111,14 @@ export default function Product() {
 
       {/* Информация о товаре — справа */}
       <div className="w-1/3 flex flex-col justify-start">
-        <h1 className="text-3xl font-bold mb-4">Название товара</h1>
+        <h1 className="text-3xl font-bold mb-4">Tee × Tee Shirt × Vintage</h1>
         <p className="text-lg mb-2">Категория: Women sneakers</p>
          <p className="text-lg mb-2">Brand</p>
-        <p className="text-lg mb-2">Size</p>
-        <p className="text-lg mb-2">Color</p>
-        <p className="text-lg mb-2">Condition</p>
+        <p className="text-lg mb-2">Men's / US S / EU 44-46 / 1</p>
+        <p className="text-lg mb-2">Blue</p>
+        <p className="text-lg mb-2">Used</p>
         <p className="text-base mb-4">
-          Описание товара. Здесь можно рассказать об особенностях, материалах,
-          преимуществах и т.д.
+          Yugioh Tee Shirt Vintage 90s Y2k Joey Wheeler Blue Eyes White Dragon Longsleeve Shirt Size S/XS
         </p>
         <div className="flex items-center justify-between w-full mb-6">
            <div className="flex items-center gap-2">
