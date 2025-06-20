@@ -3,9 +3,12 @@ import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import ImageGallery from "../components/ImageGallery";
 import Carousel from "../components/Carousel";
-import { Avatar, Button, Card } from "@heroui/react";
+import { Avatar, Button, Card, CardHeader, CardFooter, CardBody, Divider } from "@heroui/react";
 import { HeartIcon } from "../components/HeartIcon";
 import { BookmarkIcon } from "../components/SavedIcon";
+import { Star } from "lucide-react"
+import React from "react";
+import ReviewItem from "../components/ReviewItem";
 
 const images = [
   "https://media-assets.grailed.com/prd/listing/temp/6715321cb166457bb7558949ae988a96?w=800",
@@ -13,6 +16,24 @@ const images = [
   "https://media-assets.grailed.com/prd/listing/73652406/c41b9a29de1a45de9314a6ac6ddbcba1?w=800",
   "https://assets.adidas.com/images/w_1880,f_auto,q_auto/2c6e7fe3f66d4bdda664d1030d28c9f9_9366/JQ7409_01_00_standard.jpg",
 ]
+
+const reviews = [
+  {
+    date: "18 июня 2025",
+    rating: 5,
+    text: "Отличный товар, полностью соответствует описанию!",
+    productName: "Nike Air Max",
+    imageSrc: "https://media-assets.grailed.com/prd/listing/temp/6715321cb166457bb7558949ae988a96?w=800",
+  },
+  {
+    date: "12 июня 2025",
+    rating: 4,
+    text: "Хорошее качество, но доставка задержалась.",
+    productName: "Adidas Hoodie",
+    imageSrc: "https://media-assets.grailed.com/prd/listing/73652406/c41b9a29de1a45de9314a6ac6ddbcba1?w=800",
+  },
+]
+
 
  const products = [
   {
@@ -98,6 +119,7 @@ const images = [
   // другие карточки...
 ];
 export default function Product() {
+  const [isFollowed, setIsFollowed] = React.useState(false);
   return (
     <>
    
@@ -110,22 +132,22 @@ export default function Product() {
       </div>
 
       {/* Информация о товаре — справа */}
-      <div className="w-1/3 flex flex-col justify-start">
-        <h1 className="text-3xl font-bold mb-4">Tee × Tee Shirt × Vintage</h1>
-        <p className="text-lg mb-2">Категория: Women sneakers</p>
-         <p className="text-lg mb-2">Brand</p>
-        <p className="text-lg mb-2">Men's / US S / EU 44-46 / 1</p>
-        <p className="text-lg mb-2">Blue</p>
-        <p className="text-lg mb-2">Used</p>
-        <p className="text-base mb-4">
+      <div className="w-1/3 flex flex-col justify-start ">
+        <h1 className="text-[18px] font-bold mb-4">Tee × Tee Shirt × Vintage</h1>
+        <p className="text-[14px] font-medium mb-2">Категория: Women sneakers</p>
+         <p className="text-[14px] mb-2">Brand</p>
+        <p className="text-[14px] mb-2">Men's / US S / EU 44-46 / 1</p>
+        <p className="text-[14px] mb-2">Blue</p>
+        <p className="text-[14px] mb-2">Used</p>
+        <p className="text-[14px] font-thin mb-4">
           Yugioh Tee Shirt Vintage 90s Y2k Joey Wheeler Blue Eyes White Dragon Longsleeve Shirt Size S/XS
         </p>
         <div className="flex items-center justify-between w-full mb-6">
            <div className="flex items-center gap-2">
-          <Button isIconOnly aria-label="Like" variant="bordered">
+          <Button isIconOnly aria-label="Like" variant="light">
               <HeartIcon fill="#F71735" stroke="#F71735"/>
           </Button>
-          <Button isIconOnly aria-label="Like" variant="bordered">
+          <Button isIconOnly aria-label="Like" variant="light">
             <BookmarkIcon fill="black"/>
           </Button>
           
@@ -134,12 +156,75 @@ export default function Product() {
         </div>
        
        
-        <Button color="success" size="lg"  className="bg-gradient-to-tr my-2 from-pink-500 to-yellow-500 text-white shadow-lg rounded-lg">Purchase</Button>
-        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Offer</Button>
-        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-lg">Message</Button>
-        <Card>
-          <Avatar/>
-        </Card>
+        <Button color="success" size="lg"  className="bg-gradient-to-tr my-2 from-pink-500 to-yellow-500 text-white shadow-lg rounded-none">Purchase</Button>
+        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-none">Offer</Button>
+        <Button size="lg"  variant="ghost" className="py-2 px-6 my-2 rounded-none">Message</Button>
+       <Card className="max-w-[380px] bg-white hover:bg-slate-200 transition-colors duration-300 rounded-none mt-[40px] shadow-none">
+      <CardHeader className="flex justify-between items-center">
+        {/* Левая часть: аватар + инфо */}
+        <div className="flex gap-4 items-center">
+          <Avatar
+            isBordered
+            radius="full"
+            size="lg"
+            src="https://heroui.com/avatars/avatar-1.png"
+          />
+          <div className="flex flex-col items-start">
+            <h4 className="text-medium font-semibold text-black">Zoey Lang</h4>
+            <p className="text-sm text-default-400">128 отзывов</p>
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={14} fill="#eab308" stroke="#eab308" />
+              ))}
+              <span className="text-xs text-default-500 ml-1">(5.0)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Button isIconOnly aria-label="Like" variant="light">
+              <HeartIcon fill="#F71735" stroke="#F71735"/>
+          </Button>
+          <Button isIconOnly aria-label="Like" variant="light">
+            <BookmarkIcon fill="black"/>
+          </Button>
+        </div>
+        
+        
+      </CardHeader>
+
+      <CardBody className="px-4 py-2 text-sm text-black">
+        <p>Frontend developer and UI/UX enthusiast. Join me on this coding adventure!</p>
+      </CardBody>
+
+      <CardFooter className="flex gap-4 px-4 py-4">
+          <Button
+          className={isFollowed ? "bg-transparent text-foreground border-default-200" : ""}
+          color="primary"
+          radius="none"
+          size="md"
+          variant={isFollowed ? "bordered" : "solid"}
+          onPress={() => setIsFollowed(!isFollowed)}
+        >
+          {isFollowed ? "Unfollow" : "Follow"}
+        </Button>
+      </CardFooter>
+    </Card>
+    <Divider/>
+   <Carousel
+  items={reviews.map((review, i) => (
+    <ReviewItem
+      key={i}
+      date={review.date}
+      rating={review.rating}
+      text={review.text}
+      productName={review.productName}
+      imageSrc={review.imageSrc}
+    />
+  ))}
+  visibleSlides={1}
+/>
+
+
       </div>
     </div>
     

@@ -25,8 +25,6 @@ export default function Carousel({ items, visibleSlides = 3 }: CarouselProps) {
           </div>
         ))}
       </div>
-
-    
     </div>
   );
 }
