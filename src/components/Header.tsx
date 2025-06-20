@@ -145,8 +145,8 @@ export default function Header(){
           className="sm:hidden navbar-burger"
         />
         <a href="/">
-<NavbarBrand className="ml-[-150px]">
-          <AcmeLogo/>
+<NavbarBrand className="ml-[-70px]">
+         
           <p className="font-bold text-[21px]">Curated</p>
         </NavbarBrand>
         </a>

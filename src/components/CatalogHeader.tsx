@@ -1,4 +1,4 @@
-import {Breadcrumbs, BreadcrumbItem} from "@heroui/react";
+import {Select, SelectItem} from "@heroui/react";
 
 export default function CatalogHeader() {
   return (
@@ -6,13 +6,17 @@ export default function CatalogHeader() {
         <h1 className="text-3xl font-bold">
               Category name
         </h1>
-         <Breadcrumbs className="mt-[20px] mb-[20px]" size="lg">
-            <BreadcrumbItem>Home</BreadcrumbItem>
-            <BreadcrumbItem>Music</BreadcrumbItem>
-            <BreadcrumbItem>Artist</BreadcrumbItem>
-            <BreadcrumbItem>Album</BreadcrumbItem>
-            <BreadcrumbItem>Song</BreadcrumbItem>
-        </Breadcrumbs>
+       <div className="flex justify-end">
+ 
+
+    {/* Select — справа */}
+    <Select placeholder="Sort by" variant="bordered" radius="none" size="sm" className="w-[200px] mr-[115px]">
+      <SelectItem title="Price Low to High" />
+      <SelectItem title="Price High to Low" />
+      <SelectItem title="Newly listed" />
+    </Select>
+  </div>
+        
     </div>
   );
 }
