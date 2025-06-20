@@ -132,7 +132,7 @@ export default function Product() {
       </div>
 
       {/* Информация о товаре — справа */}
-      <div className="w-1/3 flex flex-col justify-start ">
+      <div className="w-1/3 flex flex-col justify-start">
         <h1 className="text-[18px] font-bold mb-4">Tee × Tee Shirt × Vintage</h1>
         <p className="text-[14px] font-medium mb-2">Категория: Women sneakers</p>
          <p className="text-[14px] mb-2">Brand</p>
