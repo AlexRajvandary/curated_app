@@ -99,7 +99,7 @@ export default function Catalog() {
             <div className="flex-1">
               <ProductGrid products={products}/>
               <div className="mt-10 flex justify-center">
-                <Pagination loop showControls variant="light" color="success" initialPage={1} total={5} size="lg"/>
+                <Pagination loop showControls variant="light" color="primary" initialPage={1} total={5} size="lg"/>
               </div>
             </div>
         </div>
