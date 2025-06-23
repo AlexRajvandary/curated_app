@@ -3,8 +3,9 @@ import Header from "../components/Header";
 import CatalogHeader from "../components/CatalogHeader";
 import CatalogFilters from "../components/CatalogFilters";
 import ProductGrid from "../components/ProductGrid";
-import {Pagination} from "@heroui/react";
-
+import { Pagination } from "@heroui/react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const imageUrls = [
   "https://media-assets.grailed.com/prd/listing/temp/5e7bf3028cda41b2a88857b3b63718a6?w=800",
@@ -88,29 +89,90 @@ const products = imageUrls.map((imageUrl, i) => ({
   imageUrl,
 }));
 
+type Filters = {
+  section: string;
+  category: string;
+  brand: string;
+  priceRange: [number, number];
+  condition: string;
+  location: string;
+};
+
+function normalizeFilterValue(value: string | null, defaultValue: string) {
+  if (!value) return defaultValue;
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+}
+
 
 export default function Catalog() {
+  const location = useLocation();
+  const navigate = useNavigate();
+ 
+  console.log(location.search);
+
+  const [filters, setFilters] = useState<Filters>({
+    section: "All",
+    category: "All",
+    brand: "Nike",
+    priceRange: [100, 5000],
+    condition: "All",
+    location: "All",
+  });
+
+  useEffect(() => {
+    
+   const params = new URLSearchParams(location.search);
+    setFilters({
+      section: normalizeFilterValue(params.get("section") , "All"),
+      category: normalizeFilterValue(params.get("category") , "All"),
+      brand: normalizeFilterValue(params.get("brand") , "All"),
+      priceRange: [
+        Number(params.get("priceMin")) || 100,
+        Number(params.get("priceMax")) || 5000,
+      ],
+      condition: normalizeFilterValue(params.get("condition") , "All"),
+      location: normalizeFilterValue(params.get("location") , "All"),
+    });
+  }, [location.search]);
+
+  const onFiltersChange = (changedFilters: Partial<Filters>) => {
+    const newFilters = { ...filters, ...changedFilters };
+    setFilters(newFilters);
+
+    const params = new URLSearchParams();
+
+    if (newFilters.section !== "All") params.set("section", newFilters.section);
+    if (newFilters.brand !== "Nike") params.set("brand", newFilters.brand);
+    if (newFilters.priceRange[0] !== 100) params.set("priceMin", String(newFilters.priceRange[0]));
+    if (newFilters.priceRange[1] !== 5000) params.set("priceMax", String(newFilters.priceRange[1]));
+    if (newFilters.condition !== "All") params.set("condition", newFilters.condition);
+    if (newFilters.location !== "All") params.set("location", newFilters.location);
+
+    navigate(`/catalog?${params.toString()}`, { replace: true });
+  };
+
   return (
     <>
-    <Header/>
-    <CatalogHeader/>
-        <div className="flex pl-[160px] gap-8">
-            <CatalogFilters/>
-            <div className="flex-1">
-              <ProductGrid products={products}/>
-              <div className="mt-10 flex justify-center">
-                <Pagination  
-                      classNames={{cursor: "bg-foreground text-background",}}
-                      color="default"
-                      variant="light"
-                      initialPage={1} 
-                      total={5} 
-                      size="lg"
-                      showControls/>
-              </div>
-            </div>
+      <Header />
+      <CatalogHeader />
+      <div className="flex pl-[160px] gap-8">
+        <CatalogFilters filters={filters} onChange={onFiltersChange} />
+        <div className="flex-1">
+          <ProductGrid products={products} />
+          <div className="mt-10 flex justify-center">
+            <Pagination
+              classNames={{ cursor: "bg-foreground text-background" }}
+              color="default"
+              variant="light"
+              initialPage={1}
+              total={5}
+              size="lg"
+              showControls
+            />
+          </div>
         </div>
-    <Footer/>
+      </div>
+      <Footer />
     </>
   );
 }

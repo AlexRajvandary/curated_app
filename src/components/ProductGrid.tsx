@@ -25,7 +25,8 @@ export default function ProductGrid({ products }: Props) {
         }}
       >
         {products.map((product) => (
-          <ProductCard imageSrc={product.imageUrl} 
+          <ProductCard key={product.id}
+                       imageSrc={product.imageUrl} 
                        title={product.title} 
                        label={product.label} 
                        category={product.category} 
