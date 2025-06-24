@@ -144,9 +144,9 @@ export default function Header(){
           className="sm:hidden navbar-burger"
         />
         <a href="/">
-<NavbarBrand className="ml-[-70px]">
+<NavbarBrand className="ml-[-140px]">
          
-          <p className="font-bold text-[21px]">Curated</p>
+          <p className="font-bold text-[27px]">Curated</p>
         </NavbarBrand>
         </a>
         
@@ -155,7 +155,7 @@ export default function Header(){
       <NavbarContent className="mr-[-100px]" justify="end">
         {!user ? (
         <>
-          <NavbarItem>
+          <NavbarItem className="mr-[-19px]">
             <Button
               as={Link}
               color="primary"
