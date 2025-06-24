@@ -189,7 +189,7 @@ export default function Header(){
    </div>
    
 
-    <Dropdown placement="bottom-end">
+    <Dropdown placement="bottom-end" radius="none">
       <DropdownTrigger>
         <Avatar
           size="sm"
@@ -200,31 +200,31 @@ export default function Header(){
         />
       </DropdownTrigger>
       <DropdownMenu aria-label="Profile Actions" variant="flat">
-        <DropdownItem key="profile" className="h-10 gap-2">
+        <DropdownItem key="profile" className="h-10 gap-2 hover:rounded-[0px]">
           <p className="font-semibold">Signed in</p>
         </DropdownItem>
-        <DropdownItem key="view_profile" color="primary" href="/user">
+        <DropdownItem key="view_profile" color="primary" href="/user" className="hover:rounded-[0px]">
           View profile
         </DropdownItem>
-        <DropdownItem key="my_messages" color="primary" href="/messenger">
+        <DropdownItem key="my_messages" color="primary" href="/messenger" className="hover:rounded-[0px]">
           My messages
         </DropdownItem>
-        <DropdownItem key="favorites" color="primary" href="/favorites">
+        <DropdownItem key="favorites" color="primary" href="/favorites" className="hover:rounded-[0px]">
           Favorites
         </DropdownItem>
-        <DropdownItem key="cart" color="primary" href="/drafts">
+        <DropdownItem key="cart" color="primary" href="/drafts" className="hover:rounded-[0px]">
           Drafts
         </DropdownItem>
-        <DropdownItem key="orders" color="primary" href="/orders">
+        <DropdownItem key="orders" color="primary" href="/orders" className="hover:rounded-[0px]">
           Orders
         </DropdownItem>
-        <DropdownItem key="settings" color="primary" href="/settings">
+        <DropdownItem key="settings" color="primary" href="/settings" className="hover:rounded-[0px]">
           Settings
         </DropdownItem>
         <DropdownItem
           key="logout"
           color="danger"
-          className="text-danger"
+          className="text-danger hover:rounded-none"
           onPress={handleLogout}
         >
           Log Out
