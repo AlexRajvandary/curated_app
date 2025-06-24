@@ -21,7 +21,7 @@ export default function ReviewItem({
 }: ReviewItemProps) {
   return (
     <Card className="w-full max-w-3xl bg-white rounded-xl overflow-hidden shadow-md">
-      <CardBody className="flex flex-row gap-6 p-6 h-[200px]">
+      <CardBody className="flex flex-row gap-20 p-6 h-[200px]">
         {/* Левая колонка */}
         <div className="flex flex-col justify-between flex-1">
           <div className="text-sm text-gray-500">{date}</div>

@@ -122,6 +122,8 @@ export default function Product() {
   const [isFollowed, setIsFollowed] = React.useState(false);
   const [liked, setLiked] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
+  const [isSellerLiked, setSellerLiked] = React.useState(false);
+  const [isSellerSaved, setSellerSaved] = React.useState(false);
   return (
     <>
    
@@ -129,12 +131,12 @@ export default function Product() {
          <div className="px-[140px]">
          <div className="flex py-8 gap-12">
       {/* Галерея фото — слева */}
-      <div className="w-2/3 ml-8">
+      <div className="w-[60%] ml-8">
            <ImageGallery images={images} />
       </div>
 
       {/* Информация о товаре — справа */}
-      <div className="w-1/3 flex flex-col justify-start">
+      <div className="w-[30%] flex flex-col justify-start">
         <h1 className="text-[18px] font-bold mb-4">Tee × Tee Shirt × Vintage</h1>
         <p className="text-[14px] font-medium mb-2">Категория: Women sneakers</p>
          <p className="text-[14px] mb-2">Brand</p>
@@ -192,11 +194,21 @@ export default function Product() {
           </div>
         </div>
         <div>
-          <Button isIconOnly aria-label="Like" variant="light">
-              <HeartIcon fill="#F71735" stroke="#F71735"/>
+          <Button isIconOnly aria-label="Like" variant="light" onPress={() => setSellerLiked(!isSellerLiked)}>
+            <HeartIcon
+              isFilled={isSellerLiked}
+              filledColor="red"
+              strokeColor={isSellerLiked ? "red" : "black"}
+              size={25}
+            />
           </Button>
-          <Button isIconOnly aria-label="Like" variant="light">
-            <BookmarkIcon fill="black"/>
+          <Button isIconOnly aria-label="Like" variant="light" onPress={() => setSellerSaved(!isSellerSaved)}>
+            <BookmarkIcon
+              isFilled={isSellerSaved}
+              filledColor="black"
+              strokeColor={"black"}
+              size={25}
+            />
           </Button>
         </div>
         
@@ -204,13 +216,12 @@ export default function Product() {
       </CardHeader>
 
       <CardBody className="px-4 py-2 text-sm text-black">
-        <p>Frontend developer and UI/UX enthusiast. Join me on this coding adventure!</p>
+        <p>Seller description</p>
       </CardBody>
 
       <CardFooter className="flex gap-4 px-4 py-4">
           <Button
-          className={isFollowed ? "bg-transparent text-foreground border-default-200" : ""}
-          color="primary"
+          className={isFollowed ? "bg-transparent text-foreground border-default-200" : "bg-black text-white"}
           radius="none"
           size="md"
           variant={isFollowed ? "bordered" : "solid"}
