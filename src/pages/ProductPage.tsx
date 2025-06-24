@@ -120,6 +120,8 @@ const reviews = [
 ];
 export default function Product() {
   const [isFollowed, setIsFollowed] = React.useState(false);
+  const [liked, setLiked] = React.useState(false);
+  const [saved, setSaved] = React.useState(false);
   return (
     <>
    
@@ -144,13 +146,22 @@ export default function Product() {
         </p>
         <div className="flex items-center justify-between w-full mb-6">
            <div className="flex items-center gap-2">
-          <Button isIconOnly aria-label="Like" variant="light">
-              <HeartIcon fill="#F71735" stroke="#F71735"/>
+          <Button isIconOnly aria-label="Like" variant="light" onPress={() => setLiked(!liked)}>
+            <HeartIcon
+              isFilled={liked}
+              filledColor="red"
+              strokeColor={liked ? "red" : "black"}
+              size={25}
+            />
           </Button>
-          <Button isIconOnly aria-label="Like" variant="light">
-            <BookmarkIcon fill="black"/>
+          <Button isIconOnly aria-label="Like" variant="light" onPress={() => setSaved(!saved)}>
+            <BookmarkIcon
+              isFilled={saved}
+              filledColor="black"
+              strokeColor={"black"}
+              size={25}
+            />
           </Button>
-          
         </div>
         <p className="text-2xl text-black font-bold text-end">$129.99</p>
         </div>

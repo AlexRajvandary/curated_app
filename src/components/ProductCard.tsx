@@ -2,6 +2,7 @@
 import { Card, Image} from "@heroui/react";;
 import { useNavigate } from "react-router-dom";
 import { HeartIcon } from "./HeartIcon";
+import { useState } from "react";
 
 interface ProductCardProps {
   imageSrc: string;
@@ -21,6 +22,7 @@ export default function ProductCard({
   price,
   href
 }: ProductCardProps) {
+   const [liked, setLiked] = useState(false);
    const navigate = useNavigate();
   return (
   <Card
@@ -30,10 +32,9 @@ export default function ProductCard({
   shadow="sm"
   className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
   style={{ width: "240px" }}
-  onPress={() => navigate(href)}
 >
   {/* Картинка */}
-  <div className="w-full h-[220px] overflow-hidden">
+  <div className="w-full h-[220px] overflow-hidden"  onClick={() => navigate(href)}>
     <Image
       radius="none"
       alt="Product image"
@@ -48,11 +49,19 @@ export default function ProductCard({
     <span className="text-[10px] text-primary font-semibold uppercase">
       {label}
     </span>
-    <h2 className="text-sm font-semibold text-foreground line-clamp-2">{title}</h2>
-    <p className="text-xs text-foreground/70">{category}</p>
+    <h2 className="text-sm font-semibold text-foreground line-clamp-2" onClick={() => navigate(href)}>{title}</h2>
+    <p className="text-xs text-foreground/70" onClick={() => navigate(href)}>{category}</p>
     <div className="flex items-center justify-between pt-2">
-      <p className="text-md font-bold">{price}</p>
-      <HeartIcon fill="white" strokeColor="black" size={22} />
+      <p className="text-md font-bold" onClick={() => navigate(href)}>{price}</p>
+      <button onClick={() => setLiked(!liked)}>
+        <HeartIcon
+        isFilled={liked}
+        filledColor="red"
+        strokeColor={liked ? "red" : "black"}
+        size={22}
+      />
+      </button>
+       
     </div>
   </div>
 </Card>

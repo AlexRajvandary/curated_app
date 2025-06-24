@@ -3,7 +3,8 @@ import React from "react";
 type HeartIconProps = React.SVGProps<SVGSVGElement> & {
   size?: number;
   strokeWidth?: number;
-  fill?: string;
+  isFilled?: boolean;
+  filledColor?: string;
   strokeColor?: string;
 };
 
@@ -12,14 +13,15 @@ export const HeartIcon: React.FC<HeartIconProps> = ({
   width,
   height,
   strokeWidth = 1.5,
-  fill = "grey",
+  isFilled = false,
+  filledColor = "red",
   strokeColor = "grey",
   ...props
 }) => {
   return (
     <svg
       aria-hidden="true"
-      fill={fill}
+      fill={isFilled ? filledColor : "none"}
       focusable="false"
       height={size ?? height}
       width={size ?? width}
