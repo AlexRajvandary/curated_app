@@ -28,7 +28,7 @@ export default function ProductCard({
   isBlurred
   shadow="sm"
   className="border-none bg-background/60 dark:bg-default-100/50 p-0 overflow-hidden"
-  style={{ width: "220px" }}
+  style={{ width: "240px" }}
   onPress={() => navigate(href)}
 >
   {/* Картинка */}

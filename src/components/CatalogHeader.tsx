@@ -2,7 +2,7 @@ import {Select, SelectItem} from "@heroui/react";
 
 export default function CatalogHeader() {
   return (
-    <div className="mt-[40px] mb-[40px] ml-[156px]">
+    <div className="mt-[40px] mb-[40px] ml-[156px] mr-[65px]">
         <h1 className="text-3xl font-bold">
               Category name
         </h1>
@@ -10,7 +10,7 @@ export default function CatalogHeader() {
  
 
     {/* Select — справа */}
-    <Select placeholder="Sort by" variant="bordered" radius="none" size="sm" className="w-[200px] mr-[115px]"   classNames={{
+    <Select placeholder="Sort by" variant="bordered" radius="none" size="sm" className="w-[170px] mr-[115px]"   classNames={{
     popoverContent: "rounded-none",
     listbox: "rounded-none",
     innerWrapper: "rounded-none"
