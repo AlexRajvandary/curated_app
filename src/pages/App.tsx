@@ -1,5 +1,4 @@
 import "../styles.css";
-import React from "react";
 import type { JSX } from "react/jsx-runtime";
 import ProductCard from "../components/ProductCard";
 import Carousel from "../components/Carousel"
@@ -7,6 +6,7 @@ import Header from "../components/Header";
 import ImageCarousel from "../components/ImageCarousel"
 import Footer from '../components/Footer';
 import CategorySection from "../components/CategorySection";
+import React from "react";
 
 type SearchIconProps = {
   size?: number;
@@ -155,7 +155,7 @@ export const AcmeLogo = () => {
 };
 
 export default function App() {
- 
+
  const products = [
   {
     imageSrc: "https://media-assets.grailed.com/prd/listing/temp/66688f71562d46939932e6f3d58a654c?w=800",

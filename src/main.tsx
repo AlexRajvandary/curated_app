@@ -6,13 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import RouterWrapper from './RouterWrapper.jsx';
 
 import './index.css'
+import { AuthProvider } from './components/AuthContext.js';
 
 createRoot(document.getElementById('root')!).render(
   
   <StrictMode>
-   <BrowserRouter>
+    <AuthProvider>
+       <BrowserRouter>
       <RouterWrapper />
     </BrowserRouter>
+    </AuthProvider>
   </StrictMode>,
 )
 

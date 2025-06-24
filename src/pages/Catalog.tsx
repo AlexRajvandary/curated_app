@@ -153,7 +153,7 @@ export default function Catalog() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <CatalogHeader />
       <div className="flex pl-[160px] pr-[100px] gap-8">
         <CatalogFilters filters={filters} onChange={onFiltersChange} />
