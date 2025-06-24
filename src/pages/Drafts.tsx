@@ -28,7 +28,15 @@ export default function Drafts(){
         </div>
        
           <div className="mt-[20px] flex justify-center">
-            <Pagination initialPage={1} total={10} showControls variant="light" size="lg" />
+            <Pagination
+              classNames={{ cursor: "bg-foreground text-background" }}
+              color="default"
+              variant="light"
+              initialPage={1}
+              total={5}
+              size="lg"
+              showControls
+            />
         </div>
     </div>
   

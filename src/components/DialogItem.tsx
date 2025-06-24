@@ -18,14 +18,14 @@ const DialogItem: React.FC<DialogItemProps> = ({ avatarSrc,
    <div
   onClick={onClick}
   className={`
-    flex items-center rounded-[10px] w-full cursor-pointer transition-colors 
+    group flex items-center rounded-[10px] w-full cursor-pointer transition-colors 
     ${isSelected ? "bg-blue-500" : "bg-white"}
-    hover:bg-gray-200
+    hover:bg-blue-500
   `}
 >
   <Avatar className="h-11 w-11 m-[5px]" src={avatarSrc} />
   <div className="flex flex-col pl-4 pb-2">
-    <p className={`text-md font-semibold transition-colors ${isSelected ? "text-white" : "text-black"} hover:text-white`}>
+    <p className={`text-md font-semibold transition-colors ${isSelected ? "text-white" : "text-black"} group-hover:text-white`}>
       {name}
     </p>
     {lastMessage && (

@@ -17,7 +17,7 @@ export default function MegaMenu({ title, categories, image }: {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="px-4 py-2 hover:bg-gray-100">{title}</button>
+      <button className="px-4 py-2 hover:bg-black hover:text-white">{title}</button>
 
       {open && (
         <div className="fixed left-0 top-[105px] w-screen bg-white shadow-lg border-t z-50">

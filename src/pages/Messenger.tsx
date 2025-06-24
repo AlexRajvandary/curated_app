@@ -38,7 +38,7 @@ export default function Messenger() {
     <>
       <Header />
       <div className="mx-[160px] my-6">
-        <div className="flex rounded-xl shadow-lg border overflow-hidden">
+        <div className="flex  shadow-lg border overflow-hidden">
           {/* Левая колонка — 30% */}
           <div className="w-[30%] bg-white min-h-[calc(100vh-160px)] border-r">
             <div className="font-medium text-lg p-4 pb-[15px]">Chats</div>

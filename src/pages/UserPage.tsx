@@ -121,13 +121,12 @@ export default function UserPage() {
         </div>
           {/* Кнопки */}
             <div className="flex gap-4 mt-[20px]">
-              <Button color="primary" className="px-5 py-2 rounded-none">
+              <Button className="px-5 py-2 rounded-none text-white bg-black">
                 Follow
               </Button>
               <Button color="default" variant="flat" className="px-5 py-2 rounded-none">
                 Message
               </Button>
-            
             </div>
              <div className="flex flex-wrap gap-4 mt-[20px] ml-[-10px]">
       <Tabs variant="underlined" size="lg">

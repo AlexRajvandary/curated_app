@@ -56,6 +56,9 @@ const sizes = [
 ];
 
 export default function ListNewProduct() {
+    const itemClass =
+    "!bg-transparent rounded-none hover:!bg-black hover:!text-white focus:!bg-black focus:!text-white aria-selected:!bg-black aria-selected:!text-white";
+
   return (
     <>
       <Header />
@@ -74,8 +77,13 @@ export default function ListNewProduct() {
               defaultItems={clothingCategories}
               placeholder="Category"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
 
@@ -86,8 +94,13 @@ export default function ListNewProduct() {
               defaultItems={clothingSubcategories}
               placeholder="Subcategory"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
 
@@ -98,8 +111,13 @@ export default function ListNewProduct() {
               defaultItems={brands}
               placeholder="Brand"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
 
@@ -110,8 +128,13 @@ export default function ListNewProduct() {
               defaultItems={sizes}
               placeholder="Size"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
 
@@ -121,8 +144,13 @@ export default function ListNewProduct() {
               defaultItems={sizes}
               placeholder="Condition"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
 
@@ -132,22 +160,27 @@ export default function ListNewProduct() {
               defaultItems={sizes}
               placeholder="Country of origin"
               variant="bordered"
+              radius='none'
+              classNames={{
+                popoverContent: "rounded-none",
+                listbox: "rounded-none",
+              }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
       </div>
     </div>
   </div>
           {/* Название */}
           <div className="w-1/2">
-            <Input label="Title" type="string" />
+            <Input label="Title" type="string" radius='none'/>
           </div>
           {/* Цена*/}
           
           <div className="w-1/2">
   <div className="flex gap-2 items-end">
     <div className="w-[65%]">
-      <Input label="Price" type="number" />
+      <Input label="Price" type="number" radius='none' />
     </div>
     <div className="w-[35%]">
       <CurrencyWithFlags />
@@ -156,7 +189,7 @@ export default function ListNewProduct() {
 </div>
 
   <div className="w-1/2">
-            <Input label="Shipping from" type="string" />
+            <Input label="Shipping from" type="string"  radius='none' />
           </div>
           
         <div className="w-1/2">
@@ -165,13 +198,18 @@ export default function ListNewProduct() {
               defaultItems={sizes}
               placeholder="Tags"
               description="Add tags to make your item more searchable"
+              radius='none'
+              classNames={{
+    popoverContent: "rounded-none",
+    listbox: "rounded-none",
+  }}
             >
-              {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
+              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
             </Autocomplete>
         </div>
           {/* Описание */}
           <div className="w-2/3">
-            <Textarea label="Description" placeholder="Add details about condition, how the garment fits, additional measurements, shipping policies, retail price, link to retail page, etc." />
+            <Textarea label="Description" radius='none' placeholder="Add details about condition, how the garment fits, additional measurements, shipping policies, retail price, link to retail page, etc." />
           </div>
 
           {/* Картинка */}
@@ -184,11 +222,11 @@ export default function ListNewProduct() {
        
       </div>
        <div className="sticky bottom-0 bg-white z-50 w-full border-t flex gap-x-4 p-4 justify-end pr-[290px]">
-  <Button color="primary">
+  <Button className='bg-black text-white' radius='none'>
     Add Product
   </Button>
 
-  <Button color="default">
+  <Button color="default" radius='none'>
     Save as draft
   </Button>
 </div>

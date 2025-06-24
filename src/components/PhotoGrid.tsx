@@ -7,13 +7,22 @@ export default function PhotoGrid() {
         {Array.from({ length:8 }).map((_, index) => (
           <div
             key={index}
-            className="w-[240px] aspect-square bg-gray-200 rounded-xl flex items-center justify-center hover:bg-gray-300 cursor-pointer transition"
+            className="w-[240px] 
+                      aspect-square
+                      bg-gray-200 
+                      rounded-none
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-gray-300 
+                      cursor-pointer 
+                      transition"
           >
             <svg
               viewBox="-2.4 -2.4 28.80 28.80"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-gray-600"
+              className="w-8 h-8 text-black"
             >
               <g id="SVGRepo_iconCarrier">
                 <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />

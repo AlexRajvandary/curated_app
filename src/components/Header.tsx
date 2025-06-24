@@ -83,6 +83,7 @@ export default function Header() {
 };
 
   const menuItems = ["Menswear", "Womenswear", "Kids", "Brands", "Sales"];
+  const dropDownItemClass = "!bg-transparent rounded-none hover:!bg-black hover:!text-white focus:!bg-black focus:!text-white aria-selected:!bg-black aria-selected:!text-white";
 
   return (
     <>
@@ -153,14 +154,14 @@ export default function Header() {
                     />
                   </DropdownTrigger>
                   <DropdownMenu aria-label="Profile Actions" variant="flat">
-                    <DropdownItem key="profile" className="h-10 gap-2 hover:rounded-[0px]">
+                    <DropdownItem key="profile" className={dropDownItemClass}>
                       <p className="font-semibold">Signed in</p>
                     </DropdownItem>
                     <DropdownItem
                       key="view_profile"
                       color="primary"
                       href="/user"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       View profile
                     </DropdownItem>
@@ -168,7 +169,7 @@ export default function Header() {
                       key="my_messages"
                       color="primary"
                       href="/messenger"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       My messages
                     </DropdownItem>
@@ -176,7 +177,7 @@ export default function Header() {
                       key="favorites"
                       color="primary"
                       href="/favorites"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       Favorites
                     </DropdownItem>
@@ -184,7 +185,7 @@ export default function Header() {
                       key="cart"
                       color="primary"
                       href="/drafts"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       Drafts
                     </DropdownItem>
@@ -192,7 +193,7 @@ export default function Header() {
                       key="orders"
                       color="primary"
                       href="/orders"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       Orders
                     </DropdownItem>
@@ -200,7 +201,7 @@ export default function Header() {
                       key="settings"
                       color="primary"
                       href="/settings"
-                      className="hover:rounded-[0px]"
+                      className={dropDownItemClass}
                     >
                       Settings
                     </DropdownItem>
@@ -215,7 +216,7 @@ export default function Header() {
                   </DropdownMenu>
                 </Dropdown>
 
-                <Button as={Link} href="/listNewProduct" variant="flat" radius="none">
+                <Button as={Link} href="/listNewProduct" variant="flat" radius="none" className="text-white bg-black">
                   Sell
                 </Button>
               </div>
