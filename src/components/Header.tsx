@@ -76,7 +76,7 @@ export default function Header() {
     name: email || "User",
     avatarUrl: "https://i.pravatar.cc/150?u=" + email
   };
-  login(dummyUser); // ❗ Вместо handleUserLogin
+  login(dummyUser);
   onClose();
   setEmail("");
   setPassword("");
@@ -95,7 +95,9 @@ export default function Header() {
           />
           <a href="/">
             <NavbarBrand className="ml-[-140px]">
-              <p className="font-bold text-[27px]">Curated</p>
+            <p className="text-[27px] font-bold bg-gradient-to-r from-gray-200 via-pink-600 to-black bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
+  Curated
+</p>
             </NavbarBrand>
           </a>
           <SearchInput />
@@ -106,7 +108,7 @@ export default function Header() {
             <NavbarItem className="mr-[-19px]">
               <Button
                 as={Link}
-                color="primary"
+                className="bg-black text-white"
                 href="#"
                 variant="flat"
                 radius="none"
@@ -133,7 +135,7 @@ export default function Header() {
                     <MailIcon />
                   </a>
                   <a href="/favorites">
-                    <HeartIcon />
+                    <HeartIcon fill="gray" strokeColor="gray" />
                   </a>
                   <a href="">
                     <NotificationIcon />
@@ -146,8 +148,8 @@ export default function Header() {
                 <Dropdown placement="bottom-end" radius="none">
                   <DropdownTrigger>
                     <Avatar
-                      size="sm"
-                      isBordered
+                      size="md"
+                     
                       as="button"
                       className="transition-transform"
                       src={user.avatarUrl}

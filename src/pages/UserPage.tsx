@@ -94,6 +94,7 @@ export default function UserPage() {
           {/* Аватар */}
           <Avatar
             className="w-[110px] h-[110px] text-large"
+            isBordered
             src="https://i.pravatar.cc/150?u=a04258114e29026708c"
           />
 
