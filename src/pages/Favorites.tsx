@@ -22,7 +22,7 @@ export default function Favorites(){
     <h1 className="text-3xl font-bold text-center">Favorites</h1>
 
     <div className="my-[10px] text-center">
-      <Tabs className="mt-[20px]" size="lg">
+      <Tabs className="mt-[20px]" size="lg" radius="none">
         <Tab title="Listings">
           <div className="mt-[10px]">
             <ProductGrid products={products} />

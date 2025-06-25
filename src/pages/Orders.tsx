@@ -27,224 +27,50 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 };
 
 export const columns = [
-  {name: "ID", uid: "id", sortable: true},
-  {name: "NAME", uid: "name", sortable: true},
-  {name: "AGE", uid: "age", sortable: true},
-  {name: "ROLE", uid: "role", sortable: true},
-  {name: "TEAM", uid: "team"},
-  {name: "EMAIL", uid: "email"},
-  {name: "STATUS", uid: "status", sortable: true},
-  {name: "ACTIONS", uid: "actions"},
+  { name: "Picture", uid: "picture" },
+  { name: "Seller", uid: "seller" },
+  { name: "Price", uid: "price", sortable: true },
+  { name: "Status", uid: "status", sortable: true },
+  { name: "DateTime", uid: "datetime", sortable: true },
+  { name: "Actions", uid: "actions" },
 ];
 
-export const statusOptions = [
-  {name: "Active", uid: "active"},
-  {name: "Paused", uid: "paused"},
-  {name: "Vacation", uid: "vacation"},
+const orderStatusColorMap: Record<string, ChipProps["color"]> = {
+  delivered: "success",
+  processing: "warning",
+  cancelled: "danger",
+};
+
+export const orders = [
+  {
+    id: 101,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 102,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 103,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
 ];
 
-export const users = [
-  {
-    id: 1,
-    name: "Tony Reichert",
-    role: "CEO",
-    team: "Management",
-    status: "active",
-    age: "29",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    email: "tony.reichert@example.com",
-  },
-  {
-    id: 2,
-    name: "Zoey Lang",
-    role: "Tech Lead",
-    team: "Development",
-    status: "paused",
-    age: "25",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-    email: "zoey.lang@example.com",
-  },
-  {
-    id: 3,
-    name: "Jane Fisher",
-    role: "Sr. Dev",
-    team: "Development",
-    status: "active",
-    age: "22",
-    avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-    email: "jane.fisher@example.com",
-  },
-  {
-    id: 4,
-    name: "William Howard",
-    role: "C.M.",
-    team: "Marketing",
-    status: "vacation",
-    age: "28",
-    avatar: "https://i.pravatar.cc/150?u=a048581f4e29026701d",
-    email: "william.howard@example.com",
-  },
-  {
-    id: 5,
-    name: "Kristen Copper",
-    role: "S. Manager",
-    team: "Sales",
-    status: "active",
-    age: "24",
-    avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
-    email: "kristen.cooper@example.com",
-  },
-  {
-    id: 6,
-    name: "Brian Kim",
-    role: "P. Manager",
-    team: "Management",
-    age: "29",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-    email: "brian.kim@example.com",
-    status: "active",
-  },
-  {
-    id: 7,
-    name: "Michael Hunt",
-    role: "Designer",
-    team: "Design",
-    status: "paused",
-    age: "27",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
-    email: "michael.hunt@example.com",
-  },
-  {
-    id: 8,
-    name: "Samantha Brooks",
-    role: "HR Manager",
-    team: "HR",
-    status: "active",
-    age: "31",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e27027008d",
-    email: "samantha.brooks@example.com",
-  },
-  {
-    id: 9,
-    name: "Frank Harrison",
-    role: "F. Manager",
-    team: "Finance",
-    status: "vacation",
-    age: "33",
-    avatar: "https://i.pravatar.cc/150?img=4",
-    email: "frank.harrison@example.com",
-  },
-  {
-    id: 10,
-    name: "Emma Adams",
-    role: "Ops Manager",
-    team: "Operations",
-    status: "active",
-    age: "35",
-    avatar: "https://i.pravatar.cc/150?img=5",
-    email: "emma.adams@example.com",
-  },
-  {
-    id: 11,
-    name: "Brandon Stevens",
-    role: "Jr. Dev",
-    team: "Development",
-    status: "active",
-    age: "22",
-    avatar: "https://i.pravatar.cc/150?img=8",
-    email: "brandon.stevens@example.com",
-  },
-  {
-    id: 12,
-    name: "Megan Richards",
-    role: "P. Manager",
-    team: "Product",
-    status: "paused",
-    age: "28",
-    avatar: "https://i.pravatar.cc/150?img=10",
-    email: "megan.richards@example.com",
-  },
-  {
-    id: 13,
-    name: "Oliver Scott",
-    role: "S. Manager",
-    team: "Security",
-    status: "active",
-    age: "37",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    email: "oliver.scott@example.com",
-  },
-  {
-    id: 14,
-    name: "Grace Allen",
-    role: "M. Specialist",
-    team: "Marketing",
-    status: "active",
-    age: "30",
-    avatar: "https://i.pravatar.cc/150?img=16",
-    email: "grace.allen@example.com",
-  },
-  {
-    id: 15,
-    name: "Noah Carter",
-    role: "IT Specialist",
-    team: "I. Technology",
-    status: "paused",
-    age: "31",
-    avatar: "https://i.pravatar.cc/150?img=15",
-    email: "noah.carter@example.com",
-  },
-  {
-    id: 16,
-    name: "Ava Perez",
-    role: "Manager",
-    team: "Sales",
-    status: "active",
-    age: "29",
-    avatar: "https://i.pravatar.cc/150?img=20",
-    email: "ava.perez@example.com",
-  },
-  {
-    id: 17,
-    name: "Liam Johnson",
-    role: "Data Analyst",
-    team: "Analysis",
-    status: "active",
-    age: "28",
-    avatar: "https://i.pravatar.cc/150?img=33",
-    email: "liam.johnson@example.com",
-  },
-  {
-    id: 18,
-    name: "Sophia Taylor",
-    role: "QA Analyst",
-    team: "Testing",
-    status: "active",
-    age: "27",
-    avatar: "https://i.pravatar.cc/150?img=29",
-    email: "sophia.taylor@example.com",
-  },
-  {
-    id: 19,
-    name: "Lucas Harris",
-    role: "Administrator",
-    team: "Information Technology",
-    status: "paused",
-    age: "32",
-    avatar: "https://i.pravatar.cc/150?img=50",
-    email: "lucas.harris@example.com",
-  },
-  {
-    id: 20,
-    name: "Mia Robinson",
-    role: "Coordinator",
-    team: "Operations",
-    status: "active",
-    age: "26",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    email: "mia.robinson@example.com",
-  },
-];
 
 export function capitalize(s : string) {
   return s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : "";
@@ -350,15 +176,15 @@ export const ChevronDownIcon = ({strokeWidth = 1.5, ...otherProps}: IconSvgProps
   );
 };
 
-const statusColorMap: Record<string, ChipProps["color"]> = {
-  active: "success",
-  paused: "danger",
-  vacation: "warning",
-};
+export const statusOptions = [
+  { name: "Delivered", uid: "delivered" },
+  { name: "Processing", uid: "processing" },
+  { name: "Cancelled", uid: "cancelled" },
+];
 
-const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status", "actions"];
+const INITIAL_VISIBLE_COLUMNS = ["picture", "seller", "price", "status", "datetime", "actions"];
 
-type User = (typeof users)[0];
+type Order = (typeof orders)[0];
 
 export default function App() {
   const [filterValue, setFilterValue] = React.useState("");
@@ -373,7 +199,7 @@ export default function App() {
   });
   const [page, setPage] = React.useState(1);
 
-  const pages = Math.ceil(users.length / rowsPerPage);
+  const pages = Math.ceil(orders.length / rowsPerPage);
 
   const hasSearchFilter = Boolean(filterValue);
 
@@ -384,21 +210,16 @@ export default function App() {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredUsers = [...users];
+    let filteredOrders = [...orders];
 
-    if (hasSearchFilter) {
-      filteredUsers = filteredUsers.filter((user) =>
-        user.name.toLowerCase().includes(filterValue.toLowerCase()),
-      );
-    }
     if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
-      filteredUsers = filteredUsers.filter((user) =>
+      filteredOrders = filteredOrders.filter((user) =>
         Array.from(statusFilter).includes(user.status),
       );
     }
 
-    return filteredUsers;
-  }, [users, filterValue, statusFilter]);
+    return filteredOrders;
+  }, [orders, filterValue, statusFilter]);
 
   const items = React.useMemo(() => {
     const start = (page - 1) * rowsPerPage;
@@ -408,71 +229,60 @@ export default function App() {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: User, b: User) => {
-      const first = a[sortDescriptor.column as keyof User] as number;
-      const second = b[sortDescriptor.column as keyof User] as number;
+    return [...items].sort((a: Order, b: Order) => {
+      const first = a[sortDescriptor.column as keyof Order] as number;
+      const second = b[sortDescriptor.column as keyof Order] as number;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
     });
   }, [sortDescriptor, items]);
 
-  const renderCell = React.useCallback((user: User, columnKey: React.Key) => {
-    const cellValue = user[columnKey as keyof User];
-
-    switch (columnKey) {
-      case "name":
-        return (
-          <User
-            avatarProps={{radius: "full", size: "sm", src: user.avatar}}
-            classNames={{
-              description: "text-default-500",
-            }}
-            description={user.email}
-            name={cellValue}
-          >
-            {user.email}
-          </User>
-        );
-      case "role":
-        return (
-          <div className="flex flex-col">
-            <p className="text-bold text-small capitalize">{cellValue}</p>
-            <p className="text-bold text-tiny capitalize text-default-500">{user.team}</p>
-          </div>
-        );
-      case "status":
-        return (
-          <Chip
-            className="capitalize border-none gap-1 text-default-600"
-            color={statusColorMap[user.status]}
-            size="sm"
-            variant="dot"
-          >
-            {cellValue}
-          </Chip>
-        );
-      case "actions":
-        return (
-          <div className="relative flex justify-end items-center gap-2">
-            <Dropdown className="bg-background border-1 border-default-200">
-              <DropdownTrigger>
-                <Button isIconOnly radius="full" size="sm" variant="light">
-                  <VerticalDotsIcon className="text-default-400" />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem key="view">View</DropdownItem>
-                <DropdownItem key="edit">Edit</DropdownItem>
-                <DropdownItem key="delete">Delete</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        );
-      default:
-        return cellValue;
-    }
-  }, []);
+  const renderOrderCell = (order: Order, columnKey: React.Key) => {
+  switch (columnKey) {
+    case "picture":
+      return   <img src={order.picture}
+                    alt="product"
+                    className="w-[100px] h-[100px] object-cover"/>
+    case "seller":
+      return (
+        <User
+          avatarProps={{ src: order.sellerAvatar }}
+          name={order.sellerName}
+          classNames={{ description: "hidden" }}
+        />
+      );
+    case "status":
+      return (
+        <Chip
+          className="capitalize"
+          color={orderStatusColorMap[order.status]}
+          size="sm"
+          variant="flat"
+        >
+          {order.status}
+        </Chip>
+      );
+    case "actions":
+      return (
+        <div className="flex justify-end gap-2">
+          <Dropdown>
+            <DropdownTrigger>
+              <Button isIconOnly size="sm" variant="light">
+                <VerticalDotsIcon />
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu>
+              <DropdownItem key="view">View</DropdownItem>
+              <DropdownItem key="cancel">Cancel</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+      );
+    default:
+      return order[columnKey as keyof Order];
+  }
+};
 
   const onRowsPerPageChange = React.useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setRowsPerPage(Number(e.target.value));
@@ -560,13 +370,10 @@ export default function App() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button className="bg-foreground text-background" endContent={<PlusIcon />} size="sm" radius="none">
-              Add New
-            </Button>
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-default-400 text-small">Total {users.length} users</span>
+          <span className="text-default-400 text-small">Total {orders.length} orders</span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
             <select
@@ -587,7 +394,7 @@ export default function App() {
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    users.length,
+    orders.length,
     hasSearchFilter,
   ]);
 
@@ -633,13 +440,13 @@ export default function App() {
     <>
     <Header/>
     <div className="flex justify-center mb-[20px]">
-  <div className="w-full max-w-[770px]">
+  <div className="w-full max-w-[1000px]">
     <div className="text-[23px] font-semibold my-[20px]">
       My Orders
     </div>
     <Table
-      isCompact
-      aria-label="Example table with custom cells, pagination and sorting"
+      removeWrapper
+      aria-label="My Orders"
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
       checkboxesProps={{
@@ -666,8 +473,8 @@ export default function App() {
       </TableHeader>
       <TableBody emptyContent={"You have no orders yet."} items={sortedItems}>
         {(item) => (
-          <TableRow key={item.id}>
-            {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
+          <TableRow key={item.id} className="h-[150px]">
+            {(columnKey) => <TableCell>{renderOrderCell(item, columnKey)}</TableCell>}
           </TableRow>
         )}
       </TableBody>
