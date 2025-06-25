@@ -19,7 +19,8 @@ import {
   ModalBody,
   ModalFooter,
   ModalContent,
-  ModalHeader
+  ModalHeader,
+  Badge
 } from "@heroui/react";
 import NavigationMenu from "./NavigationMenu";
 import type { JSX } from "react/jsx-runtime";
@@ -132,13 +133,17 @@ export default function Header() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-4 mr-[20px]">
                   <a href="/messenger">
-                    <MailIcon />
+                   <Badge color="danger" content={5} shape="circle">
+                      <MailIcon />
+                   </Badge>
                   </a>
                   <a href="/favorites">
                     <HeartIcon fill="gray" strokeColor="gray" />
                   </a>
                   <a href="">
-                    <NotificationIcon />
+                    <Badge color="danger" content={5} shape="circle">
+                      <NotificationIcon />
+                    </Badge>
                   </a>
                   <a href="/orders">
                     <CartIcon />

@@ -45,7 +45,7 @@ export default function Messenger() {
             
             <div className='px-4'><SearchInput/></div>
             <div className="flex flex-col items-center py-[15px] w-full">
-              <Tabs aria-label="Options" className="w-full justify-center">
+              <Tabs aria-label="Options" radius='none' className="w-full justify-center">
     <Tab key="Sellers" title="Sellers" className="w-full">
         <DialogCollection items={dialogs} 
                           selectedId={selectedId ?? undefined}

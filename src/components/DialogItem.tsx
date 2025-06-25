@@ -18,7 +18,7 @@ const DialogItem: React.FC<DialogItemProps> = ({ avatarSrc,
    <div
   onClick={onClick}
   className={`
-    group flex items-center rounded-[10px] w-full cursor-pointer transition-colors 
+    group flex items-center rounded-none w-full cursor-pointer transition-colors 
     ${isSelected ? "bg-blue-500" : "bg-white"}
     hover:bg-blue-500
   `}
