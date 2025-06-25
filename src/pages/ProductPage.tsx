@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import ImageGallery from "../components/ImageGallery";
 import Carousel from "../components/Carousel";
-import { Avatar, Button, Card, CardHeader, CardFooter, CardBody, Divider } from "@heroui/react";
+import { Avatar, Button, Card, CardHeader, CardFooter, CardBody, Divider, Chip } from "@heroui/react";
 import { HeartIcon } from "../components/HeartIcon";
 import { BookmarkIcon } from "../components/SavedIcon";
 import { Star } from "lucide-react"
@@ -141,7 +141,7 @@ export default function Product() {
         <p className="text-[14px] font-medium mb-2">Категория: Women sneakers</p>
          <p className="text-[14px] mb-2">Brand</p>
         <p className="text-[14px] mb-2">Men's / US S / EU 44-46 / 1</p>
-        <p className="text-[14px] mb-2">Blue</p>
+        <p className="text-[14px] mb-2"><Chip variant="dot" color="primary" radius="none">Color</Chip></p>
         <p className="text-[14px] mb-2">Used</p>
         <p className="text-[14px] font-thin mb-4">
           Yugioh Tee Shirt Vintage 90s Y2k Joey Wheeler Blue Eyes White Dragon Longsleeve Shirt Size S/XS

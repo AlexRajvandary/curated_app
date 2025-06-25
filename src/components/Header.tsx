@@ -133,7 +133,7 @@ export default function Header() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-4 mr-[20px]">
                   <a href="/messenger">
-                   <Badge color="danger" content={5} shape="circle">
+                   <Badge color="danger" content={5} shape="circle" showOutline={false} size="sm">
                       <MailIcon />
                    </Badge>
                   </a>
@@ -141,7 +141,7 @@ export default function Header() {
                     <HeartIcon fill="gray" strokeColor="gray" />
                   </a>
                   <a href="">
-                    <Badge color="danger" content={5} shape="circle">
+                    <Badge color="danger" content={5} shape="circle" showOutline={false} size="sm">
                       <NotificationIcon />
                     </Badge>
                   </a>
