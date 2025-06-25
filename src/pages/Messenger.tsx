@@ -8,15 +8,42 @@ import ActiveDialog from '../components/ActiveDialog';
 import type { Message } from '../components/ActiveDialog';
 import React from "react";
 
-const sampleMessages : Message[] = [
-  { id: "1", text: "Привет!", sender: "other" },
-  { id: "2", text: "Как дела?", sender: "other" },
-  { id: "3", text: "Привет, отлично! А у тебя?", sender: "me" },
-  { id: "4", text: "Тоже хорошо, спасибо", sender: "other" },
-   { id: "5", text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", sender: "other" },
-    { id: "6", text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", sender: "other" }
-];
+const now = Date.now();
 
+const generateMessages = (
+  count: number,
+  sender: "me" | "other",
+  baseTime: number,
+  label: string
+): Message[] => {
+  return Array.from({ length: count }, (_, i) => ({
+    id: `${label}-${i + 1}`,
+    text: `${label} message ${i + 1}`,
+    sender,
+    createdAt: new Date(baseTime + i * 60_000).toISOString(), // по 1 минуте между
+  }));
+};
+
+const sampleMessages: Message[] = [
+  // Сегодня (0 дней назад)
+  ...generateMessages(10, "me", now - 0 * 24 * 60 * 60 * 1000, "Today"),
+
+  // Вчера (1 день назад)
+  ...generateMessages(10, "other", now - 1 * 24 * 60 * 60 * 1000, "Yesterday"),
+
+  // Неделя (3–6 дней назад)
+  ...generateMessages(4, "me", now - 3 * 24 * 60 * 60 * 1000, "ThisWeek"),
+  ...generateMessages(3, "other", now - 4 * 24 * 60 * 60 * 1000, "ThisWeek"),
+  ...generateMessages(3, "me", now - 6 * 24 * 60 * 60 * 1000, "ThisWeek"),
+
+  // В этом году (например, 30–80 дней назад)
+  ...generateMessages(5, "me", now - 30 * 24 * 60 * 60 * 1000, "ThisYear"),
+  ...generateMessages(5, "other", now - 80 * 24 * 60 * 60 * 1000, "ThisYear"),
+
+  // Более года назад (например, 400–420 дней назад)
+  ...generateMessages(5, "me", now - 400 * 24 * 60 * 60 * 1000, "LastYear"),
+  ...generateMessages(5, "other", now - 420 * 24 * 60 * 60 * 1000, "LastYear"),
+];
 const dialogs: DialogData[] = [
   { id: "1", name: "Nina", lastMessage: "Are we still on?", avatarSrc: "https://i.pravatar.cc/150?u=101" },
   { id: "2", name: "Omar", lastMessage: "Sent the invoice", avatarSrc: "https://i.pravatar.cc/150?u=102" },
@@ -38,14 +65,14 @@ export default function Messenger() {
     <>
       <Header />
       <div className="mx-[160px] my-6">
-        <div className="flex  shadow-lg border overflow-hidden">
+        <div className="flex shadow-lg border overflow-hidden">
           {/* Левая колонка — 30% */}
           <div className="w-[30%] bg-white min-h-[calc(100vh-160px)] border-r">
             <div className="font-medium text-lg p-4 pb-[15px]">Chats</div>
             
             <div className='px-4'><SearchInput/></div>
-            <div className="flex flex-col items-center py-[15px] w-full">
-              <Tabs aria-label="Options" radius='none' className="w-full justify-center">
+            <div className="flex flex-col items-center pt-[15px] w-full">
+              <Tabs aria-label="Options" radius='none' className="w-full justify-center" classNames={{panel:"py-0"}}>
     <Tab key="Sellers" title="Sellers" className="w-full">
         <DialogCollection items={dialogs} 
                           selectedId={selectedId ?? undefined}
@@ -70,9 +97,14 @@ export default function Messenger() {
             messages={sampleMessages}
           />
         ) : (
-          <div className="flex items-center justify-center h-full text-gray-500">
-            Выберите диалог
-          </div>
+         <div className="flex items-center justify-center h-full text-gray-500">
+  <div className="max-w-md px-4 text-justify">
+    Please be respectful, kind, and considerate. Treat others as you’d like to be treated.  
+    No spam, hate speech, or inappropriate content.  
+    Let’s keep the conversation helpful and friendly!
+  </div>
+</div>
+
         )}
 
 </div>

@@ -1,5 +1,6 @@
 import type {SVGProps} from "react";
 import type {Selection, ChipProps, SortDescriptor} from "@heroui/react";
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
 import {
@@ -27,6 +28,7 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
 };
 
 export const columns = [
+    { name: "Order Id", uid: "id" },
   { name: "Picture", uid: "picture" },
   { name: "Seller", uid: "seller" },
   { name: "Price", uid: "price", sortable: true },
@@ -62,6 +64,168 @@ export const orders = [
   },
   {
     id: 103,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 104,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 105,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 106,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 107,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 108,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 109,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 110,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 111,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 112,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 113,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 114,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 115,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 116,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 117,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 118,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
+    sellerName: "Michael Hunt",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
+    price: "$45.00",
+    status: "cancelled",
+    datetime: "2025-06-18 17:05",
+  },
+  {
+    id: 119,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/fe4718af5f254ee594ce02a81b2b4abd?w=240", // картинка товара
+    sellerName: "Tony Reichert",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    price: "$199.99",
+    status: "delivered",
+    datetime: "2025-06-22 14:32",
+  },
+  {
+    id: 120,
+    picture: "https://media-assets.grailed.com/prd/listing/temp/1d8aa488a9fa40f88157c22da6431237?w=800",
+    sellerName: "Jane Fisher",
+    sellerAvatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+    price: "$89.50",
+    status: "processing",
+    datetime: "2025-06-20 09:12",
+  },
+  {
+    id: 121,
     picture: "https://media-assets.grailed.com/prd/listing/temp/cdd4ad2d3e92438c93d847406fb90a6e?w=240",
     sellerName: "Michael Hunt",
     sellerAvatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
@@ -197,6 +361,7 @@ export default function App() {
     column: "age",
     direction: "ascending",
   });
+  const navigate = useNavigate();
   const [page, setPage] = React.useState(1);
 
   const pages = Math.ceil(orders.length / rowsPerPage);
@@ -240,6 +405,8 @@ export default function App() {
 
   const renderOrderCell = (order: Order, columnKey: React.Key) => {
   switch (columnKey) {
+    case "id":
+      return <p>{order.id}</p>
     case "picture":
       return   <img src={order.picture}
                     alt="product"
@@ -473,7 +640,18 @@ export default function App() {
       </TableHeader>
       <TableBody emptyContent={"You have no orders yet."} items={sortedItems}>
         {(item) => (
-          <TableRow key={item.id} className="h-[150px]">
+          <TableRow key={item.id} className="h-[150px] hover:bg-gray-200"  onClick={(e) => {
+    // Игнорируем клик, если он был по интерактивному элементу
+    const target = e.target as HTMLElement;
+    if (
+      target.closest("button") ||
+      target.closest("a") ||
+      target.closest("[role='menuitem']")
+    ) {
+      return;
+    }
+    navigate(`/orders/${item.id}`);
+  }}>
             {(columnKey) => <TableCell>{renderOrderCell(item, columnKey)}</TableCell>}
           </TableRow>
         )}

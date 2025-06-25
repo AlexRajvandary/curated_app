@@ -6,6 +6,7 @@ export type Message = {
   id: string;
   text: string;
   sender: "me" | "other";
+  createdAt: string | Date;
 };
 
 export type ActiveDialogProps = {
@@ -28,14 +29,14 @@ export default function ActiveDialog({
         <Avatar className="w-12 h-12" src={avatarSrc} />
         <div className="flex flex-col justify-center">
           <div className="text-medium font-medium">{name}</div>
-          <div className={`text-sm ${isOnline ? "text-green-500" : "text-gray-500"}`}>
+          <div className={`text-sm ${isOnline ? "text-green-600" : "text-gray-500"}`}>
             {isOnline ? "Online" : "Offline"}
           </div>
         </div>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-6 pb-[100px] pt-4 hide-scrollbar">
+      <div className="flex-1 overflow-y-auto px-6 hide-scrollbar">
         <Messages messages={messages} />
       </div>
 
