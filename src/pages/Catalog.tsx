@@ -1,11 +1,11 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import CatalogHeader from "../components/CatalogHeader";
-import CatalogFilters from "../components/CatalogFilters";
 import ProductGrid from "../components/ProductGrid";
-import { Pagination } from "@heroui/react";
+import { Pagination, Select, SelectItem } from "@heroui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import CatalogFiltersPopover from "../components/CatalogFiltersPopover";
 
 const imageUrls = [
   "https://media-assets.grailed.com/prd/listing/temp/5e7bf3028cda41b2a88857b3b63718a6?w=800",
@@ -103,7 +103,6 @@ function normalizeFilterValue(value: string | null, defaultValue: string) {
   return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
 }
 
-
 export default function Catalog() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -155,8 +154,43 @@ export default function Catalog() {
     <>
       <Header/>
       <CatalogHeader />
+      <div className="px-[160px] pb-[20px]">
+       <div className="sticky top-[64px]  z-60 flex items-center justify-between w-full">
+          <CatalogFiltersPopover filters={filters} onChange={onFiltersChange} />
+          <Select
+            placeholder="Sort by"
+            variant="bordered"
+            radius="none"
+            size="sm"
+            className="w-[170px]"
+            classNames={{
+              popoverContent: "rounded-none",
+              listbox: "rounded-none",
+              innerWrapper: "rounded-none"
+            }}
+            listboxProps={{
+              itemClasses: {
+              base: [
+                "rounded-none",
+                "text-default-800",
+                "transition-colors",
+                "data-[hover=true]:bg-black",
+                "data-[hover=true]:text-white",
+                "data-[selectable=true]:focus:bg-black",
+                "data-[selectable=true]:focus:text-white",
+                "data-[focus-visible=true]:ring-2 ring-black",
+                ],
+              },
+            }}
+          >
+            <SelectItem title="Price Low to High" />
+            <SelectItem title="Price High to Low" />
+            <SelectItem title="Newly listed" />
+          </Select>
+        </div>
+      </div>
+      
       <div className="flex pl-[160px] pr-[100px] gap-8">
-        <CatalogFilters filters={filters} onChange={onFiltersChange} />
         <div className="flex-1">
           <ProductGrid products={products} />
           <div className="mt-10 flex justify-center">

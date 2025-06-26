@@ -9,6 +9,8 @@ Button
 } from "@heroui/react";
 import PhotoGrid from '../components/PhotoGrid';
 import CurrencyWithFlags from '../components/CurrencyAutocomplete';
+import TagSelector from '../components/TagSelector';
+
 
 const clothingCategories = [
   { label: "T-Shirts", key: "tshirts", description: "Casual short-sleeved shirts" },
@@ -191,21 +193,8 @@ export default function ListNewProduct() {
   <div className="w-1/2">
             <Input label="Shipping from" type="string"  radius='none' />
           </div>
-          
         <div className="w-1/2">
-            <Autocomplete
-              className="w-full"
-              defaultItems={sizes}
-              placeholder="Tags"
-              description="Add tags to make your item more searchable"
-              radius='none'
-              classNames={{
-    popoverContent: "rounded-none",
-    listbox: "rounded-none",
-  }}
-            >
-              {(item) => <AutocompleteItem key={item.key} className={itemClass}>{item.label}</AutocompleteItem>}
-            </Autocomplete>
+          <TagSelector/>
         </div>
           {/* Описание */}
           <div className="w-2/3">

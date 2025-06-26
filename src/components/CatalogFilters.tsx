@@ -1,5 +1,6 @@
 import { Accordion, AccordionItem, Radio, RadioGroup, Slider } from "@heroui/react";
 import SearchInput from "./SearchInput";
+import TagSelector from "./TagSelector";
 
 type Filters = {
   section: string;
@@ -127,6 +128,15 @@ export default function CatalogFilters({ filters, onChange }: CatalogFiltersProp
             <Radio value="UK" size="sm">United Kingdom</Radio>
             <Radio value="Other" size="sm">Other</Radio>
           </RadioGroup>
+        </AccordionItem>
+
+          <AccordionItem
+          key="9"
+          aria-label="Tags"
+          title="Tags"
+          classNames={{ title: "text-sm font-semibold" }}
+        >
+         <TagSelector allowCustomTags={false}/>
         </AccordionItem>
       </Accordion>
     </aside>
