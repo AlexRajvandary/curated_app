@@ -1,5 +1,3 @@
-import {Select, SelectItem} from "@heroui/react";
-
 export default function CatalogHeader() {
   return (
     <div className="mt-[40px] mb-[40px] ml-[156px] mr-[65px]">
