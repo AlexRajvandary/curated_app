@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# Clothing Marketplace Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a pet-project of a clothing marketplace where every user can act both as a seller and a buyer.  
+The platform includes a product catalog, user storefronts, real-time chats, order management, and a clean, modern UI.  
 
-Currently, two official plugins are available:
+ 
+[![Netlify Status](https://img.shields.io/badge/Netlify-Live_Site-00998f?logo=netlify&style=for-the-badge)](https://curatedapp.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+☝️ Click 
 
-## Expanding the ESLint configuration
+### Home Page
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![MainPage (3)](https://github.com/user-attachments/assets/34a4bc71-4da1-4908-ac96-1a8bd0c652e8)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Product Catalog
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![Catalog page (1)](https://github.com/user-attachments/assets/40f662ae-a123-43ab-a427-2d8bb3821a80)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### User Profile Page
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+![User page](https://github.com/user-attachments/assets/07be7fe0-07ec-4cc3-853f-f81cf5c7a752)
+
+### Chats Page
+(Insert GIF demo here)
+
+### Orders Page
+(Insert GIF demo here)
