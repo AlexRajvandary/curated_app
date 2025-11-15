@@ -10,7 +10,9 @@ The platform includes a product catalog, user storefronts, real-time chats, orde
 
 ### Home Page
 
-![MainPage (3)](https://github.com/user-attachments/assets/34a4bc71-4da1-4908-ac96-1a8bd0c652e8)
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/a352bd05-71af-40d2-a98a-c6fae4b0d36f" />
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/8faa545d-810a-4796-a46c-1a319cf78dfc" />
 
 ### Product Catalog
 
@@ -21,7 +23,10 @@ The platform includes a product catalog, user storefronts, real-time chats, orde
 ![User page](https://github.com/user-attachments/assets/07be7fe0-07ec-4cc3-853f-f81cf5c7a752)
 
 ### Chats Page
-(Insert GIF demo here)
+
+https://github.com/user-attachments/assets/b39fc27e-3321-4ef1-a323-8fe8bcd20987
 
 ### Orders Page
-(Insert GIF demo here)
+
+https://github.com/user-attachments/assets/c16fa4a5-07bb-4215-9efe-d820a6fec87d
+
