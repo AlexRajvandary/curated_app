@@ -32,4 +32,8 @@ https://github.com/user-attachments/assets/c16fa4a5-07bb-4215-9efe-d820a6fec87d
 
 https://github.com/user-attachments/assets/01a967a8-da53-418e-9416-29e8923bb525
 
+### Add New Product Page
+
+![Recording 2025-11-16 032523](https://github.com/user-attachments/assets/a5008fd5-42ab-40c1-bcdd-30d7eacf2646)
+
 
